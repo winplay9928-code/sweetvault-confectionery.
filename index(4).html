@@ -1,0 +1,2275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://*.supabase.co wss://*.supabase.co; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>SweetVault Confectionery — Small-Batch Treats &amp; Wholesale Kenya</title>
+<meta name="description" content="Discover colourful confectionery, build a Pick &amp; Mix, and shop retail treats or apply for SweetVault wholesale in Kenya.">
+<meta property="og:title" content="SweetVault Confectionery">
+<meta property="og:description" content="Small-batch sweets, Pick &amp; Mix and wholesale cartons in Kenya.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#D92662">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23D92662'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #fff8ef;
+  --sf: #fffdf9;
+  --berry: #c91f59;
+  --berry-hover: #a91849;
+  --plum: #32164f;
+  --amber: #f5a623;
+  --mint: #14866d;
+  --ink: #25151e;
+  --bd: #f0dfd0;
+  --mut: #78646e;
+  --tag-bg: #fff0f4;
+  --tag-fg: #9b244c;
+  --note-bg: #fff2e3;
+  --sec-bg: #f7efe8;
+  --sec-fg: #624b59;
+  --radius: 20px;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1e1619;
+    --sf: #2a2024;
+    --ink: #fffbf5;
+    --bd: #3d3036;
+    --mut: #b9a8b0;
+    --tag-bg: #4b2339;
+    --tag-fg: #ffd2e2;
+    --note-bg: #35272d;
+    --sec-bg: #3b2d38;
+    --sec-fg: #f0dce7;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at 8% 0%, rgba(255, 216, 226, .34), transparent 28%), var(--bg);
+  color: var(--ink);
+  font: 16px/1.5 "Plus Jakarta Sans", Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.01em;
+}
+h1, h2, h3, h4 { font-family: Fraunces, Georgia, serif; margin: .2em 0; letter-spacing: -.035em; }
+h2 { font-size: clamp(25px, 5vw, 36px); }
+button, input, select, textarea { font: inherit; color: inherit; }
+button {
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 13px;
+  border: 1px solid var(--bd);
+  background: var(--sf);
+  cursor: pointer;
+  transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
+}
+button:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 7px 18px rgba(74, 32, 48, .08); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+}
+.pri {
+  background: var(--berry);
+  color: #fff;
+  border-color: var(--berry);
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(201, 31, 89, .18);
+}
+.pri:hover:not(:disabled) { background: var(--berry-hover); border-color: var(--berry-hover); }
+body.ws .pri { background: var(--plum); border-color: var(--plum); box-shadow: 0 8px 18px rgba(50, 22, 79, .22); }
+body.ws .pri:hover:not(:disabled) { background: #230e39; border-color: #230e39; }
+input, select, textarea {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  background: var(--sf);
+  width: 100%;
+}
+label { display: block; font-size: 13px; font-weight: 700; margin: 10px 0 4px; color: var(--mut); }
+
+.topline {
+  background: #2b123e;
+  color: #ffe7d5;
+  text-align: center;
+  padding: 7px 12px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.topline span { color: #ffb3cb; }
+.topline button {
+  min-height: 24px;
+  padding: 0 10px;
+  font-size: 10px;
+  border-radius: 999px;
+  background: #ffcc8b;
+  color: #2b123e;
+  border: 0;
+  font-weight: 900;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  backdrop-filter: blur(18px);
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  padding: 10px max(16px, calc((100vw - 1160px) / 2));
+  border-bottom: 1px solid rgba(201, 31, 89, .12);
+  box-shadow: 0 8px 24px rgba(43, 18, 62, .04);
+}
+header .row:first-child { min-height: 42px; }
+.row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.sp { justify-content: space-between; }
+.logo {
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 800;
+  font-size: 25px;
+  letter-spacing: -.06em;
+  color: var(--berry);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.logo:before {
+  content: "✦";
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 11px;
+  background: var(--berry);
+  color: #fff;
+  font-size: 17px;
+  box-shadow: 0 6px 16px rgba(201, 31, 89, .22);
+}
+body.ws .logo { color: var(--plum); }
+body.ws .logo:before { background: var(--plum); box-shadow: 0 6px 16px rgba(50, 22, 79, .25); }
+
+nav {
+  display: flex;
+  gap: 7px;
+  overflow-x: auto;
+  padding: 10px 0 3px;
+  scrollbar-width: none;
+}
+nav::-webkit-scrollbar { display: none; }
+nav button {
+  white-space: nowrap;
+  border-color: transparent;
+  background: transparent;
+  font-size: 14px;
+  padding: 0 13px;
+}
+nav button[aria-current=true] {
+  background: var(--plum);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(50, 22, 79, .15);
+}
+
+main { max-width: 1160px; margin: 0 auto; padding: 22px 18px 40px; }
+
+.hero {
+  border-radius: 28px;
+  min-height: 340px;
+  padding: clamp(25px, 5vw, 54px);
+  margin-bottom: 24px;
+  background: linear-gradient(115deg, #2c1241 0%, #4a1a58 53%, #9c2459 100%);
+  color: #fffbf5;
+  border: 1px solid rgba(255, 255, 255, .1);
+  box-shadow: 0 18px 42px rgba(50, 22, 79, .16);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero:before {
+  content: "THE SWEET SIDE OF EVERYDAY";
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .2em;
+  color: #ffd8a7;
+  margin-bottom: 18px;
+}
+.hero h1 { font-size: clamp(36px, 7vw, 66px); max-width: 8.2em; line-height: .99; font-weight: 700; margin: 0 0 18px; }
+.hero p { font-size: clamp(15px, 2vw, 18px); max-width: 31em; color: #f5e9f4; line-height: 1.65; }
+.hero:after {
+  content: "";
+  position: absolute;
+  right: 2%;
+  bottom: -80px;
+  width: 310px;
+  height: 310px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 35%, #fff4cf 0 7%, #ffb0c8 8% 18%, #e54c88 19% 34%, #a62768 35% 52%, #6a1b57 53% 70%, transparent 71%);
+  border: 14px solid rgba(255, 255, 255, .08);
+  box-shadow: 0 0 0 20px rgba(255, 255, 255, .04), 0 20px 60px rgba(22, 5, 28, .35);
+  transform: rotate(-18deg);
+  z-index: -1;
+}
+.hero .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; position: relative; z-index: 1; }
+.hero .hero-actions button { min-height: 48px; }
+.hero .hero-actions .pri { background: #ffcc8b; color: #32164f; border-color: #ffcc8b; box-shadow: 0 12px 24px rgba(18, 5, 30, .2); }
+.hero .hero-actions .pri:hover:not(:disabled) { background: #ffdda9; border-color: #ffdda9; }
+.hero .hero-actions button:not(.pri) { background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .35); color: #fff; }
+
+.promise-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 18px 0 24px; }
+.promise {
+  background: var(--sf);
+  border: 1px solid var(--bd);
+  border-radius: 15px;
+  padding: 13px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-width: 0;
+}
+.promise .pi {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  border-radius: 11px;
+  background: var(--tag-bg);
+  color: var(--tag-fg);
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+}
+.promise b { display: block; font-size: 12px; }
+.promise small { display: block; color: var(--mut); font-size: 11px; line-height: 1.35; margin-top: 2px; }
+
+.catalog-head { display: flex; align-items: end; justify-content: space-between; gap: 12px; margin: 24px 2px 12px; }
+.catalog-head h2 { font-size: clamp(25px, 5vw, 34px); margin: 0; }
+.catalog-head p { font-size: 13px; color: var(--mut); margin: 4px 0 0; }
+.catalog-count { background: var(--tag-bg); color: var(--tag-fg); border-radius: 999px; padding: 7px 11px; font-size: 12px; font-weight: 800; white-space: nowrap; }
+
+#cat { border: 0; background: transparent; box-shadow: none; padding: 0; margin: 0 0 18px; scroll-margin-top: 130px; }
+#cat > .row:first-child { align-items: end; }
+#cat .row:last-child { gap: 8px; }
+#cat .row:last-child button { border-radius: 999px; padding: 0 17px; min-height: 39px; font-size: 13px; font-weight: 700; }
+#cat .row:last-child button.pri { background: var(--plum); border-color: var(--plum); color: #fff; }
+#cat .row:last-child button:not(.pri) { background: var(--sf); border-color: var(--bd); color: var(--ink); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 225px), 1fr)); gap: 17px; }
+.card {
+  position: relative;
+  background: var(--sf);
+  border: 1px solid var(--bd);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 22px rgba(75, 36, 48, .04);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(75, 36, 48, .1); }
+.card .img { height: 170px; display: grid; place-items: center; position: relative; overflow: hidden; isolation: isolate; }
+.card .img:after { content: ""; position: absolute; width: 120px; height: 120px; border: 1px dashed rgba(255, 255, 255, .5); border-radius: 50%; transform: rotate(-18deg); }
+.card .img svg { transition: transform .28s cubic-bezier(.2, .8, .2, 1); }
+.card:hover .img svg { transform: scale(1.08) rotate(-3deg); }
+.card-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(43, 18, 62, .85);
+  color: #ffcc8b;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 4px 9px;
+  border-radius: 999px;
+  letter-spacing: .04em;
+  z-index: 2;
+}
+.card .b { padding: 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.card h3 { font-size: 18px; line-height: 1.18; }
+.card .b > small:first-child { color: var(--mut); letter-spacing: .08em; font-size: 11px; text-transform: uppercase; font-weight: 800; }
+.card .b > b { font-size: 21px; color: var(--berry); letter-spacing: -.04em; }
+body.ws .card .b > b { color: var(--plum); }
+.card .b button { margin-top: auto; font-weight: 800; }
+.card .b > small.stockline { display: flex; align-items: center; gap: 6px; }
+.stockline:before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.margin-pill {
+  background: color-mix(in srgb, var(--mint) 12%, transparent);
+  color: var(--mint);
+  border: 1px solid color-mix(in srgb, var(--mint) 30%, transparent);
+  border-radius: 10px;
+  padding: 6px 9px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tag { border-radius: 999px; background: var(--tag-bg); color: var(--tag-fg); padding: 3px 9px; font-size: 11px; font-weight: 700; display: inline-block; margin: 0 3px 3px 0; }
+.ok { color: var(--mint); font-weight: 700; }
+.warn { color: var(--amber); font-weight: 700; }
+.bad { color: var(--berry); font-weight: 700; }
+
+.panel { background: var(--sf); border: 1px solid var(--bd); border-radius: 20px; box-shadow: 0 5px 20px rgba(75, 36, 48, .03); padding: 18px; margin-bottom: 14px; }
+.note { border-left: 4px solid var(--berry); border-radius: 0 14px 14px 0; padding: 10px 14px; background: var(--note-bg); margin: 12px 0; font-size: 14px; }
+.bar { height: 14px; background: var(--bd); border-radius: 99px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--berry); transition: width .25s; }
+.bar.mint i { background: var(--mint); }
+.tw { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { padding: 10px 8px; border-bottom: 1px solid var(--bd); text-align: left; white-space: nowrap; }
+
+.pass { max-width: 340px; margin: 0 auto 12px; text-align: center; }
+.qr { width: 220px; height: 220px; margin: 12px auto; background: #fff; padding: 10px; border-radius: 12px; border: 1px solid var(--bd); }
+.qr svg { width: 100%; height: 100%; }
+.sr { position: absolute; left: -9999px; }
+.stat { flex: 1 1 145px; border-radius: 16px; }
+.stat b { font-size: 22px; display: block; margin-top: 4px; }
+
+.toast {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  max-width: 540px;
+  margin: 0 auto;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 13px 16px;
+  border-radius: 16px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, .25);
+  z-index: 25;
+  font-weight: 600;
+}
+.toast.err { background: #9b1643; color: #fff; border: 1px solid rgba(255, 255, 255, .2); }
+.skip { position: absolute; left: -999px; top: 0; background: var(--ink); color: var(--bg); padding: 8px; z-index: 30; }
+.skip:focus { left: 8px; }
+
+.empty-products { grid-column: 1 / -1; text-align: center; padding: 34px 18px; background: var(--sf); border: 1px dashed var(--bd); border-radius: 20px; }
+.empty-products .empty-icon { font-size: 36px; margin-bottom: 8px; }
+.empty-products h3 { font-size: 25px; }
+.empty-products p { color: var(--mut); max-width: 28em; margin: 8px auto 16px; }
+
+#quickcart { position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); z-index: 8; pointer-events: none; }
+#quickcart .quickcart-inner {
+  pointer-events: auto;
+  max-width: 580px;
+  margin: 0 auto;
+  background: #2c1241;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .15);
+  border-radius: 18px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: 0 16px 40px rgba(28, 9, 43, .35);
+}
+#quickcart .qc-label { font-size: 11px; color: #e9d9ee; display: block; }
+#quickcart .qc-total { font-weight: 900; font-size: 17px; display: block; }
+#quickcart button { background: #ffcc8b; color: #32164f; border: 0; font-weight: 900; min-height: 43px; border-radius: 12px; white-space: nowrap; }
+body:has(#quickcart .quickcart-inner) footer { padding-bottom: 84px; }
+
+footer { color: var(--mut); }
+footer > div { max-width: 1160px; margin: 0 auto; padding: 30px 18px; border-top: 1px solid var(--bd); }
+footer small { display: block; margin-top: 18px; }
+
+/* Admin Product Studio */
+.admin-products { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); gap: 14px; }
+.admin-product { background: var(--sf); border: 1px solid var(--bd); border-radius: 20px; padding: 16px; display: grid; gap: 12px; min-width: 0; }
+.admin-product-head { display: flex; align-items: center; gap: 12px; }
+.admin-product-preview { width: 78px; height: 78px; border-radius: 15px; object-fit: cover; background: var(--tag-bg); flex: 0 0 78px; }
+.admin-product-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.admin-product-fields .wide { grid-column: 1 / -1; }
+.admin-product-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.admin-product-actions button { flex: 1 1 110px; }
+.admin-photo-tools { display: grid; gap: 8px; }
+.admin-photo-tools input[type=file] { font-size: 12px; padding: 8px; }
+
+/* Account Creation & Auth */
+.auth-wrap { max-width: 560px; margin: 0 auto; }
+.auth-intro { padding: 4px 4px 16px; }
+.auth-eyebrow { font-size: 11px; font-weight: 900; letter-spacing: .14em; color: var(--berry); }
+.auth-intro h2 { margin: 7px 0; }
+.auth-intro p, .auth-muted, .auth-email { color: var(--mut); }
+.auth-panel { padding: clamp(16px, 4vw, 26px); border-radius: 24px; }
+.auth-fields { display: grid; gap: 2px; }
+.auth-panel input { border-radius: 13px; min-height: 49px; }
+.auth-pw { display: flex; gap: 8px; }
+.auth-pw input { flex: 1; min-width: 0; }
+.auth-pw button { min-height: 49px; padding: 0 13px; }
+.auth-meter { height: 6px; background: var(--bd); border-radius: 99px; overflow: hidden; margin-top: 8px; }
+.auth-meter span { display: block; height: 100%; width: 0; background: var(--berry); transition: width .2s, background .2s; }
+.auth-muted { display: block; font-size: 12px; margin-top: 6px; }
+.auth-consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.45; margin: 16px 0; color: var(--mut); font-weight: 400; }
+.auth-consent input { width: 20px; height: 20px; min-height: 20px; flex: 0 0 20px; margin-top: 2px; accent-color: var(--berry); }
+.auth-consent a, .auth-switch button { color: var(--berry); font-weight: 800; }
+.auth-actions { display: grid; gap: 9px; margin-top: 18px; }
+.auth-actions button { width: 100%; min-height: 49px; }
+.auth-switch { text-align: center; font-size: 14px; margin: 17px 0 0; }
+.auth-switch button { border: 0; background: transparent; padding: 4px 8px; min-height: 36px; box-shadow: none; }
+.auth-security { background: var(--sec-bg); color: var(--sec-fg); border-radius: 13px; padding: 11px 13px; font-size: 12px; margin-top: 15px; line-height: 1.5; }
+.auth-name { font-size: 23px; font-weight: 900; letter-spacing: -.04em; }
+.auth-email { overflow-wrap: anywhere; }
+.auth-actions button:not(.pri) { background: transparent; }
+
+/* Modal Confirmation & Perk Dialogs */
+dialog.sv-dialog {
+  border: 1px solid var(--bd);
+  border-radius: 24px;
+  background: var(--sf);
+  color: var(--ink);
+  padding: 24px;
+  max-width: 420px;
+  width: calc(100% - 28px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .35);
+}
+dialog.sv-dialog::backdrop { background: rgba(20, 10, 26, .6); backdrop-filter: blur(5px); }
+
+.perk-wheel {
+  width: 150px;
+  height: 150px;
+  margin: 14px auto;
+  border-radius: 50%;
+  background: conic-gradient(#c91f59 0deg 90deg, #32164f 90deg 180deg, #f5a623 180deg 270deg, #14866d 270deg 360deg);
+  display: grid;
+  place-items: center;
+  border: 6px solid #fff;
+  box-shadow: 0 10px 26px rgba(50, 22, 79, .22);
+  transition: transform 1.6s cubic-bezier(.15, .85, .25, 1);
+}
+.perk-wheel span {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  color: #32164f;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+@media (min-width: 520px) {
+  .auth-fields { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .auth-fields > div { min-width: 0; }
+}
+@media (min-width: 760px) {
+  .hero { display: flex; flex-direction: column; justify-content: center; }
+  .hero:after { width: 330px; height: 330px; right: 5%; bottom: -105px; }
+}
+@media (max-width: 650px) {
+  .topline { font-size: 10px; letter-spacing: .05em; }
+  header { padding: 8px 12px; }
+  .logo { font-size: 21px; }
+  .logo:before { width: 27px; height: 27px; }
+  main { padding: 14px 12px 28px; }
+  .hero { min-height: 300px; padding: 26px 20px; border-radius: 23px; }
+  .hero h1 { max-width: 7.8em; font-size: clamp(34px, 10vw, 48px); }
+  .hero:after { width: 175px; height: 175px; right: -42px; bottom: -45px; border-width: 10px; }
+  .promise-strip { grid-template-columns: 1fr; gap: 8px; margin: 14px 0 20px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .card .img { height: 130px; }
+  .card .b { padding: 11px; }
+  .card h3 { font-size: 16px; }
+  .card .b > b { font-size: 18px; }
+  .panel { padding: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *:before, *:after { transition: none !important; scroll-behavior: auto !important; }
+}
+@media print {
+  header, nav, footer, .topline, #quickcart, #toast, .noprint { display: none !important; }
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<a class="skip" href="#app">Skip to content</a>
+<div class="topline">
+  <span>✦ FREE DELIVERY OVER KES 3,000</span>
+  <span>·</span>
+  <span>BULK PACK SAVINGS UP TO 30%</span>
+  <button type="button" onclick="openPerkModal()">Unlock Treat Perk 🎁</button>
+</div>
+<header>
+  <div class="row sp">
+    <span class="logo" onclick="go('shop')" role="button" tabindex="0">SweetVault</span>
+    <div class="row">
+      <button id="mode" onclick="setMode()"></button>
+      <button class="pri" id="cartb" onclick="go('cart')"></button>
+    </div>
+  </div>
+  <nav id="nav" aria-label="Main"></nav>
+</header>
+<main id="app"></main>
+<footer id="foot"></footer>
+<div id="quickcart" aria-live="polite"></div>
+<div class="sr" role="status" aria-live="polite" id="live"></div>
+<div id="toast"></div>
+
+<dialog id="confirmDlg" class="sv-dialog">
+  <h3 id="dlgTitle">Confirm action</h3>
+  <p id="dlgBody" style="color:var(--mut)"></p>
+  <div class="row sp" style="margin-top:16px">
+    <button type="button" id="dlgCancel">Cancel</button>
+    <button type="button" class="pri" id="dlgOk">Confirm</button>
+  </div>
+</dialog>
+
+<dialog id="perkDlg" class="sv-dialog" style="text-align:center">
+  <span class="auth-eyebrow">SWEETVAULT WELCOME DROP</span>
+  <h3>Spin the Vault</h3>
+  <p style="color:var(--mut);font-size:14px">Unlock an instant promo code for your retail cart or Pick &amp; Mix.</p>
+  <div class="perk-wheel" id="perkWheel"><span>✦</span></div>
+  <div id="perkResult" style="min-height:42px;margin:10px 0;font-weight:700"></div>
+  <div class="row sp" style="margin-top:14px">
+    <button type="button" onclick="document.getElementById('perkDlg').close()">Close</button>
+    <button type="button" class="pri" id="spinBtn" onclick="spinVault()">Spin now</button>
+  </div>
+</dialog>
+
+<script>
+const sb = supabase.createClient(
+  'https://avyahfktpzjsihjlriqh.supabase.co',
+  'sb_publishable_MCi_-sOto5sg7N7pGD207A_YFouXlu4'
+);
+
+const $ = s => document.querySelector(s);
+const K = n => 'KES ' + Math.round(Number(n) || 0).toLocaleString('en-KE');
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const day = n => { const d = new Date(); d.setDate(d.getDate() + n); return d.toISOString().slice(0, 10); };
+
+/* Security: Client-side rate limiter & safe URL validator */
+const rateLimits = {};
+function checkRateLimit(bucket, maxAttempts = 5, windowMs = 60000) {
+  const now = Date.now();
+  const entry = rateLimits[bucket] || { count: 0, resetAt: now + windowMs, lockUntil: 0 };
+  if (now < entry.lockUntil) {
+    const secs = Math.ceil((entry.lockUntil - now) / 1000);
+    return `Too many attempts. Please wait ${secs}s before trying again.`;
+  }
+  if (now > entry.resetAt) {
+    entry.count = 0;
+    entry.resetAt = now + windowMs;
+  }
+  entry.count++;
+  if (entry.count > maxAttempts) {
+    entry.lockUntil = now + windowMs;
+    rateLimits[bucket] = entry;
+    return `Rate limit reached. Locked for ${Math.ceil(windowMs / 1000)}s for your security.`;
+  }
+  rateLimits[bucket] = entry;
+  return null;
+}
+function resetRateLimit(bucket) { delete rateLimits[bucket]; }
+
+function isSafeHttpsUrl(u) {
+  if (!u) return false;
+  try {
+    const parsed = new URL(String(u));
+    return parsed.protocol === 'https:';
+  } catch (_) {
+    return false;
+  }
+}
+
+const DEMO_PRODUCTS = [
+  { sku: 'SV-SOUR-01', name: 'Tangy Hibiscus Sour Belts', cat: 'Sour', price: 250, ws_price: 4500, carton: 24, moq: 2, stock: 120, batch: 'B26-01', bb: day(180), diet: ['Vegan', 'Halal'], color: '#D92662', badge: 'Bestseller', description: 'Zesty hibiscus and citrus sugar-dusted sour ribbons.', ingredients: 'Sugar, glucose syrup, wheat flour, citric acid, hibiscus extract.', allergens: 'Contains gluten (wheat).' },
+  { sku: 'SV-GUM-02', name: 'Mango & Passion Fruit Gummies', cat: 'Fruity', price: 280, ws_price: 5040, carton: 24, moq: 2, stock: 95, batch: 'B26-02', bb: day(210), diet: ['Gluten-Free'], color: '#F59E0B', badge: 'Kenyan Favourite', description: 'Juicy tropical fruit chews bursting with Kenyan mango & passion notes.', ingredients: 'Glucose syrup, sugar, gelatin, mango puree, passion fruit concentrate.', allergens: 'None declared.' },
+  { sku: 'SV-CHOC-03', name: 'Sea Salt Caramel Truffles', cat: 'Chocolate', price: 450, ws_price: 8100, carton: 24, moq: 1, stock: 18, batch: 'B26-03', bb: day(90), diet: ['Vegetarian'], color: '#4A1C40', badge: 'Small Batch', description: 'Velvety dark milk chocolate shells with liquid salted caramel.', ingredients: 'Cocoa mass, sugar, cocoa butter, whole milk powder, cream, sea salt.', allergens: 'Contains milk, soy. May contain tree nuts.' },
+  { sku: 'SV-MINT-04', name: 'Highland Peppermint Humbugs', cat: 'Mint', price: 200, ws_price: 3600, carton: 24, moq: 2, stock: 150, batch: 'B26-04', bb: day(300), diet: ['Vegan', 'Gluten-Free'], color: '#14866D', badge: 'Crisp Classic', description: 'Crisp boiled peppermint stripes with a chewy toffee center.', ingredients: 'Sugar, glucose syrup, peppermint oil, caramel color.', allergens: 'None declared.' }
+];
+
+const PROMOS = {
+  SWEET10: { code: 'SWEET10', pct: 10, label: '10% off retail treats' },
+  VAULT15: { code: 'VAULT15', pct: 15, label: '15% VIP vault drop' },
+  FREESHIP: { code: 'FREESHIP', freeShip: true, label: 'Free delivery unlocked' }
+};
+
+function safeJsonParse(key, fallback) {
+  try {
+    const raw = localStorage.getItem(key);
+    return raw ? JSON.parse(raw) : fallback;
+  } catch (_) {
+    return fallback;
+  }
+}
+
+const st = {
+  view: 'shop',
+  authMode: 'in',
+  authBusy: false,
+  mode: 'retail',
+  user: null,
+  prof: null,
+  P: [],
+  S: { t1: 10, d1: 15, t2: 50, d2: 30, deliv: 250, free: 3000, mix100: 120, clear: 25 },
+  cat: 'All',
+  q: '',
+  sort: 'pop',
+  cart: safeJsonParse('sv_cart', { retail: [], wholesale: [] }),
+  promo: localStorage.getItem('sv_promo') || '',
+  mix: { size: 500, items: {}, name: '' },
+  recipes: safeJsonParse('sv_rec', []),
+  orders: [],
+  last: null,
+  adm: { orders: [], apps: [], audit: [], revs: [], q: '', t: 'all' },
+  busy: false,
+  loading: true,
+  sel: null,
+  rev: [],
+  page: 'terms'
+};
+
+const isStaff = () => st.prof && ['admin', 'staff'].includes(st.prof.role);
+const isAdmin = () => st.prof && st.prof.role === 'admin';
+const wsOK = () => st.prof && ['tier1', 'vip'].includes(st.prof.ws_status);
+const expired = p => p.bb && p.bb < day(0);
+const soon = p => p.bb && !expired(p) && p.bb <= day(30);
+
+let toastTimer = null;
+function toast(m, isError = false) {
+  live(m);
+  const t = $('#toast');
+  t.innerHTML = `<div class="toast ${isError ? 'err' : ''}" role="alert">${esc(m)}</div>`;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { t.innerHTML = ''; }, 4200);
+}
+const live = m => { const el = $('#live'); if (el) el.textContent = m; };
+
+function askConfirm(title, body) {
+  return new Promise(resolve => {
+    const dlg = $('#confirmDlg');
+    if (!dlg || !dlg.showModal) return resolve(window.confirm(body));
+    $('#dlgTitle').textContent = title;
+    $('#dlgBody').textContent = body;
+    const cleanup = res => {
+      dlg.close();
+      $('#dlgOk').onclick = null;
+      $('#dlgCancel').onclick = null;
+      resolve(res);
+    };
+    $('#dlgOk').onclick = () => cleanup(true);
+    $('#dlgCancel').onclick = () => cleanup(false);
+    dlg.showModal();
+  });
+}
+
+/* Marketing: Spin the Vault Promo Drawer */
+function openPerkModal() {
+  const dlg = $('#perkDlg');
+  if (!dlg || !dlg.showModal) return;
+  const saved = localStorage.getItem('sv_promo');
+  if (saved && PROMOS[saved]) {
+    $('#perkResult').innerHTML = `<span class="ok">Active code: <b>${esc(saved)}</b> (${esc(PROMOS[saved].label)})</span>`;
+    $('#spinBtn').textContent = 'Apply to cart';
+    $('#spinBtn').onclick = () => { dlg.close(); go('cart'); };
+  }
+  dlg.showModal();
+}
+
+function spinVault() {
+  const wheel = $('#perkWheel');
+  const btn = $('#spinBtn');
+  if (!wheel || !btn) return;
+  btn.disabled = true;
+  const keys = Object.keys(PROMOS);
+  const pick = keys[Math.floor(Math.random() * keys.length)];
+  const deg = 720 + Math.floor(Math.random() * 360);
+  wheel.style.transform = `rotate(${deg}deg)`;
+  setTimeout(() => {
+    st.promo = pick;
+    localStorage.setItem('sv_promo', pick);
+    $('#perkResult').innerHTML = `<span class="ok">Unlocked <b>${esc(pick)}</b> — ${esc(PROMOS[pick].label)}!</span>`;
+    btn.disabled = false;
+    btn.textContent = 'Shop with code';
+    btn.onclick = () => { $('#perkDlg').close(); render(); };
+    toast(`Promo code ${pick} saved to your cart!`);
+  }, 1650);
+}
+
+/* Security: Idle Session Timeout (30 mins for signed-in users) */
+let idleTimer = null;
+function resetIdleGuard() {
+  clearTimeout(idleTimer);
+  if (!st.user) return;
+  idleTimer = setTimeout(async () => {
+    try {
+      const { error } = await sb.auth.signOut();
+      if (error) throw error;
+      st.authMode = 'in'; st.view = 'shop';
+      toast('You were signed out after 30 minutes of inactivity.');
+    } catch (error) {
+      console.error('Idle sign-out failed:', error);
+      toast('Automatic sign-out failed. Please sign out manually.', true);
+    }
+  }, 30 * 60 * 1000);
+}
+['click', 'keydown', 'scroll', 'touchstart'].forEach(ev => window.addEventListener(ev, resetIdleGuard, { passive: true }));
+
+async function loadProf() {
+  if (!st.user) { st.prof = null; return; }
+  try {
+    const { data, error } = await sb.from('sv_profiles').select('*').eq('id', st.user.id).maybeSingle();
+    if (error) throw error;
+    st.prof = data || null;
+  } catch (error) {
+    console.error('SweetVault profile load failed:', error);
+    st.prof = null;
+  }
+}
+
+async function loadShop() {
+  st.loading = true;
+  try {
+    const [a, b] = await Promise.all([
+      sb.from('sv_products').select('*').eq('active', true).order('sku'),
+      sb.from('sv_settings').select('value').eq('key', 'pricing').maybeSingle()
+    ]);
+    st.P = (a.data && a.data.length) ? a.data : DEMO_PRODUCTS;
+    if (b.data && b.data.value) st.S = b.data.value;
+  } catch (_) {
+    if (!st.P.length) st.P = DEMO_PRODUCTS;
+  } finally {
+    st.loading = false;
+  }
+}
+
+async function loadRec() {
+  if (st.user) {
+    const { data } = await sb.from('sv_recipes').select('*').order('created_at', { ascending: false });
+    st.recipes = data || [];
+  } else {
+    st.recipes = safeJsonParse('sv_rec', []);
+  }
+}
+
+async function loadOrders() {
+  await loadRec();
+  if (!st.user) { st.orders = []; return; }
+  const { data } = await sb.from('sv_orders').select('*,sv_order_passes(token,redeemed_at)').order('created_at', { ascending: false });
+  st.orders = data || [];
+}
+
+async function loadAdm() {
+  if (!isStaff()) return;
+  const ad = isAdmin();
+  const [o, a, l, r] = await Promise.all([
+    sb.from('sv_orders').select('*,sv_order_passes(token,redeemed_at)').order('created_at', { ascending: false }),
+    ad ? sb.from('sv_applications').select('*').order('created_at', { ascending: false }) : { data: [] },
+    ad ? sb.from('sv_audit').select('*').order('at', { ascending: false }).limit(30) : { data: [] },
+    ad ? sb.from('sv_reviews').select('*').eq('approved', false).order('created_at') : { data: [] }
+  ]);
+  st.adm = {
+    orders: o.data || [],
+    apps: a.data || [],
+    audit: l.data || [],
+    revs: r.data || [],
+    q: st.adm.q || '',
+    t: st.adm.t || 'all'
+  };
+}
+
+let authSyncSeq = 0;
+async function syncSession(user) {
+  const seq = ++authSyncSeq;
+  st.user = user || null;
+  resetIdleGuard();
+  await Promise.all([loadProf(), loadOrders()]);
+  if (seq !== authSyncSeq) return;
+  if (!st.user) {
+    st.cart.wholesale = [];
+    if (st.mode === 'wholesale') st.mode = 'retail';
+  }
+  render();
+}
+
+async function boot() {
+  /* Capture referral tag from URL if present */
+  const params = new URLSearchParams(window.location.search);
+  const refCode = params.get('ref');
+  if (refCode && /^[A-Z0-9_-]{3,20}$/i.test(refCode)) {
+    sessionStorage.setItem('sv_ref', refCode.toUpperCase());
+  }
+
+  $('#foot').innerHTML = footer();
+  const { data } = await sb.auth.getSession();
+  st.user = data.session?.user || null;
+  resetIdleGuard();
+  await Promise.all([loadProf(), loadShop(), loadOrders()]);
+  render();
+  sb.auth.onAuthStateChange((ev, s) => {
+    if (ev === 'PASSWORD_RECOVERY') {
+      st.authMode = 'recovery';
+      st.view = 'account';
+      queueMicrotask(() => render());
+      return;
+    }
+    if (['SIGNED_IN', 'SIGNED_OUT', 'USER_UPDATED', 'TOKEN_REFRESHED'].includes(ev)) {
+      queueMicrotask(() => syncSession(s?.user || null).catch(err => {
+        console.error('SweetVault session sync failed:', err);
+        toast('Your session could not be refreshed. Please reload the page.', true);
+      }));
+    }
+  });
+}
+
+function go(v) {
+  if (v === 'admin' && !isStaff()) return;
+  st.view = v;
+  if (v === 'pass') loadOrders().then(render);
+  if (v === 'admin') loadAdm().then(render);
+  render();
+  window.scrollTo(0, 0);
+}
+
+function setMode() {
+  st.mode = st.mode === 'retail' ? 'wholesale' : 'retail';
+  st.view = 'shop';
+  render();
+}
+
+const lock = () => st.mode === 'wholesale' && !wsOK();
+
+function price(cart, mode) {
+  const S = st.S;
+  const L = [];
+  let u = 0;
+  for (const it of cart) {
+    if (it.k === 'p') {
+      const p = st.P.find(x => x.sku === it.sku);
+      if (!p) continue;
+      if (mode === 'retail') {
+        u += it.qty;
+        L.push({ it, name: p.name, desc: it.qty + ' × ' + K(p.price), base: p.price * it.qty, elig: true });
+      } else {
+        L.push({
+          it,
+          name: p.name,
+          desc: it.qty + ' carton(s) × ' + p.carton + ' units @ ' + K(p.ws_price),
+          base: p.ws_price * it.qty,
+          moq: p.moq,
+          moqErr: it.qty < p.moq ? 'MOQ is ' + p.moq + ' cartons' : ''
+        });
+      }
+    } else {
+      L.push({ it, name: 'Mix: ' + (it.name || 'My mix'), desc: it.size + 'g', base: it.price });
+    }
+  }
+  const bulkPct = mode === 'retail' ? (u >= S.t2 ? S.d2 : u >= S.t1 ? S.d1 : 0) : 0;
+  const activePromo = mode === 'retail' && st.promo && PROMOS[st.promo] ? PROMOS[st.promo] : null;
+  const pct = Math.max(bulkPct, activePromo?.pct || 0);
+
+  let nxt = '';
+  if (mode === 'retail') {
+    if (u < S.t1) nxt = `Add ${S.t1 - u} more pack${S.t1 - u === 1 ? '' : 's'} to unlock ${S.d1}% bulk savings.`;
+    else if (u < S.t2) nxt = `Add ${S.t2 - u} more pack${S.t2 - u === 1 ? '' : 's'} to unlock ${S.d2}% bulk savings.`;
+  }
+  let sub = 0, sav = 0;
+  L.forEach(l => {
+    const canDisc = l.elig || (activePromo && activePromo.pct);
+    l.disc = canDisc ? Math.floor(l.base * pct / 100) : 0;
+    l.total = l.base - l.disc;
+    sub += l.base;
+    sav += l.disc;
+  });
+  const net = sub - sav;
+  const freeShip = mode === 'retail' && (net >= S.free || Boolean(activePromo?.freeShip));
+  const fee = L.length ? (freeShip ? 0 : S.deliv) : 0;
+  const freeShipGap = mode === 'retail' && !freeShip ? Math.max(0, S.free - net) : 0;
+  const freeShipPct = mode === 'retail' ? Math.min(100, Math.round((net / Math.max(1, S.free)) * 100)) : 0;
+
+  return { L, pct, nxt, sub, sav, net, fee, total: net + fee, freeShipGap, freeShipPct, activePromo };
+}
+
+function addP(sku) {
+  const p = st.P.find(x => x.sku === sku);
+  const c = st.cart[st.mode];
+  if (!p || lock() || expired(p) || p.stock <= 0) return;
+  const ex = c.find(i => i.k === 'p' && i.sku === sku);
+  const maxQty = st.mode === 'wholesale' ? Math.floor(Number(p.stock || 0) / Math.max(1, Number(p.carton || 1))) : Number(p.stock || 0);
+  if (maxQty < 1) return toast('This product is currently out of stock.', true);
+  if (st.mode === 'wholesale' && Number(p.moq || 1) > maxQty) return toast('There is not enough stock to meet the wholesale minimum for this product.', true);
+  if (ex) {
+    if (ex.qty >= maxQty) return toast('You have reached the available stock limit.', true);
+    ex.qty++;
+  } else c.push({ k: 'p', sku, qty: st.mode === 'wholesale' ? Number(p.moq || 1) : 1 });
+  live(p.name + ' added to cart');
+  render();
+}
+
+function qty(i, d) {
+  const c = st.cart[st.mode];
+  if (!c[i]) return;
+  const line = c[i];
+  const product = line.k === 'p' ? st.P.find(x => x.sku === line.sku) : null;
+  const maxQty = product ? (st.mode === 'wholesale' ? Math.floor(Number(product.stock || 0) / Math.max(1, Number(product.carton || 1))) : Number(product.stock || 0)) : Infinity;
+  const next = line.qty + d;
+  if (next < 1) c.splice(i, 1);
+  else if (next > maxQty) return toast('You have reached the available stock limit.', true);
+  else line.qty = next;
+  render();
+}
+
+function setMoq(i, moq) {
+  const c = st.cart[st.mode];
+  if (!c[i]) return;
+  const product = c[i].k === 'p' ? st.P.find(x => x.sku === c[i].sku) : null;
+  const maxQty = product ? Math.floor(Number(product.stock || 0) / Math.max(1, Number(product.carton || 1))) : 0;
+  if (!Number.isInteger(Number(moq)) || moq < 1 || moq > maxQty) return toast('Requested quantity exceeds available wholesale stock.', true);
+  c[i].qty = Number(moq);
+  render();
+}
+
+function rm(i) {
+  st.cart[st.mode].splice(i, 1);
+  render();
+}
+
+const tile = p => {
+  const badgeHtml = p.badge ? `<span class="card-badge">${esc(p.badge)}</span>` : (p.stock > 0 && p.stock <= 20 ? `<span class="card-badge">Only ${p.stock} left</span>` : '');
+  if (isSafeHttpsUrl(p.image_url)) {
+    return `<div class="img" style="background:#f8e9ef" aria-hidden="true">${badgeHtml}<img src="${esc(p.image_url)}" alt="${esc(p.name)}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>`;
+  }
+  const c = esc(p.color || '#D92662');
+  const seed = String(p.sku || p.name || 'sweet').split('').reduce((a, x) => a + x.charCodeAt(0), 0);
+  const c2 = ['#FFB84D', '#F6A7C1', '#9BD7C5', '#B9A4E8', '#F5E6A8'][seed % 5];
+  const c3 = ['#F4D8B8', '#8ED6D0', '#F8A2A2', '#D5B5F2', '#C7E5A0'][(seed >> 2) % 5];
+  return `<div class="img" style="background:radial-gradient(circle at 18% 15%,rgba(255,255,255,.25),transparent 30%),linear-gradient(145deg,${c},#32164f)" aria-hidden="true">
+    ${badgeHtml}
+    <svg width="148" height="148" viewBox="0 0 148 148" role="img" aria-label="Illustrated sweet assortment">
+      <defs>
+        <filter id="sh${seed}"><feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#32164f" flood-opacity=".25"/></filter>
+      </defs>
+      <g filter="url(#sh${seed})">
+        <g transform="translate(27 24) rotate(-19 25 25)">
+          <path d="M8 18 0 7 2 25 0 43 9 32M42 18 51 7 49 25 51 43 42 32" fill="#fff"/>
+          <rect x="7" y="10" width="36" height="34" rx="17" fill="#fff"/>
+          <rect x="11" y="14" width="28" height="26" rx="13" fill="${c2}"/>
+          <path d="M14 27q11-18 22 0-11 18-22 0" fill="#fff" opacity=".68"/>
+        </g>
+        <g transform="translate(76 20) rotate(22 24 24)">
+          <circle cx="24" cy="24" r="22" fill="${c3}" stroke="#fff" stroke-width="3"/>
+          <path d="M10 25q14-25 28 0-14 25-28 0" fill="#fff" opacity=".45"/>
+          <circle cx="24" cy="24" r="6" fill="#fff" opacity=".75"/>
+        </g>
+        <g transform="translate(48 75) rotate(11 27 27)">
+          <rect x="3" y="8" width="48" height="39" rx="19" fill="#fff"/>
+          <rect x="7" y="12" width="40" height="31" rx="15" fill="${c}"/>
+          <path d="M10 28q17-23 34 0-17 23-34 0" fill="#fff" opacity=".7"/>
+          <circle cx="27" cy="28" r="5" fill="#fff"/>
+        </g>
+        <g transform="translate(94 77)">
+          <circle cx="18" cy="18" r="16" fill="${c2}" stroke="#fff" stroke-width="3"/>
+          <path d="M18 5 21 14 31 18 21 21 18 31 14 21 5 18 14 14Z" fill="#fff" opacity=".7"/>
+        </g>
+      </g>
+      <g fill="#fff" opacity=".85">
+        <path d="M18 75l3 7 7 3-7 3-3 7-3-7-7-3 7-3Z"/>
+        <circle cx="119" cy="56" r="3"/>
+        <circle cx="28" cy="112" r="2"/>
+      </g>
+    </svg>
+    <span style="position:absolute;bottom:10px;left:12px;color:#fff;font-size:9px;font-weight:900;letter-spacing:.14em;text-shadow:0 1px 5px rgba(0,0,0,.4)">SWEETVAULT · LITTLE JOYS</span>
+  </div>`;
+};
+
+function shop() {
+  const ps = st.P.filter(p => (st.cat === 'All' || p.cat === st.cat) && p.name.toLowerCase().includes(st.q.toLowerCase()));
+  ps.sort((a, b) => st.sort === 'price'
+    ? a.price - b.price
+    : st.sort === 'new'
+      ? String(b.created_at).localeCompare(a.created_at)
+      : Number(b.stock > 0) - Number(a.stock > 0) || b.stock - a.stock);
+
+  const cats = ['All', ...new Set(st.P.map(p => p.cat))];
+  let h = st.mode === 'retail'
+    ? `<section class="hero">
+        <h1>A little joy, sealed in every bite.</h1>
+        <p>Discover small-batch treats, build your own Pick &amp; Mix pouch, and unlock instant bundle perks across Kenya.</p>
+        <div class="hero-actions">
+          <button class="pri" onclick="document.getElementById('cat').scrollIntoView({behavior:'smooth'})">Explore the vault <span aria-hidden="true">↗</span></button>
+          <button onclick="go('mix')">Create your mix <span aria-hidden="true">✦</span></button>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:22px;font-size:12px;color:#f7dbe9">
+          <span>✦ Freshly sealed batches</span><span>·</span><span>Up to 30% pack savings</span><span>·</span><span>Cryptographic order passes</span>
+        </div>
+      </section>`
+    : `<section class="hero">
+        <h1>Good business deserves sweeter margins.</h1>
+        <p>Master carton pricing, transparent resale profit calculators, and verified passes for shops, cafés, and event teams.</p>
+        <div class="hero-actions">
+          <button class="pri" onclick="document.getElementById('cat').scrollIntoView({behavior:'smooth'})">Browse cartons ↗</button>
+        </div>
+        <p style="font-size:13px;margin-top:18px">Account status: <b>${esc(st.prof?.ws_status || 'not applied')}</b></p>
+      </section>`;
+
+  if (lock()) return h + wsApply();
+
+  h += `<div class="promise-strip">
+      <div class="promise"><span class="pi">✦</span><span><b>Bundle &amp; save up to ${st.S.d2}%</b><small>Automatic discounts at ${st.S.t1}+ and ${st.S.t2}+ packs</small></span></div>
+      <div class="promise"><span class="pi">♡</span><span><b>Made for sharing</b><small>Custom Pick &amp; Mix pouches &amp; gifting</small></span></div>
+      <div class="promise"><span class="pi">🔒</span><span><b>Verified QR passes</b><small>Tamper-proof single-use pickup &amp; delivery</small></span></div>
+    </div>
+    <div class="catalog-head">
+      <div><h2>Explore the vault</h2><p>Find your next little joy.</p></div>
+      <span class="catalog-count">${ps.length} ${ps.length === 1 ? 'treat' : 'treats'}</span>
+    </div>
+    <div id="cat" class="panel">
+      <div class="row">
+        <div style="flex:2 1 160px"><label for="q">Find a treat</label><input id="q" value="${esc(st.q)}" placeholder="Search sweets…" oninput="st.q=this.value;render(true)"></div>
+        <div style="flex:1 1 120px"><label for="so">Sort by</label><select id="so" onchange="st.sort=this.value;render()">
+          <option value="pop" ${st.sort === 'pop' ? 'selected' : ''}>Availability</option>
+          <option value="price" ${st.sort === 'price' ? 'selected' : ''}>Price: low to high</option>
+          <option value="new" ${st.sort === 'new' ? 'selected' : ''}>Recently added</option>
+        </select></div>
+      </div>
+      <div class="row" style="margin-top:10px">${cats.map(c => `<button ${c === st.cat ? 'class="pri"' : ''} aria-pressed="${c === st.cat}" onclick="st.cat='${esc(c)}';render()">${esc(c)}</button>`).join('')}</div>
+    </div>
+    <div class="grid">`;
+
+  if (st.loading && !st.P.length) {
+    h += '<div class="empty-products"><div class="empty-icon">🍬</div><h3>Opening the vault…</h3><p>Our sweet collection is being prepared.</p></div>';
+  } else if (!ps.length) {
+    h += '<div class="empty-products"><div class="empty-icon">🔎</div><h3>No treats found</h3><p>Try another search or choose a different category.</p><button data-clear-filter>Clear filters</button></div>';
+  }
+
+  for (const p of ps) {
+    const out = p.stock <= 0 || expired(p);
+    const unitWs = p.carton ? p.ws_price / p.carton : 0;
+    const resaleProfit = p.carton ? (p.price * p.carton) - p.ws_price : 0;
+    const marginPct = p.carton && p.price ? Math.round((resaleProfit / (p.price * p.carton)) * 100) : 0;
+
+    h += `<article class="card">${tile(p)}<div class="b">
+      <small>${st.mode === 'retail' ? esc(p.cat) : esc(p.sku) + ' · ' + esc(p.cat)}</small>
+      <h3><a href="#" data-open-sku="${esc(p.sku)}" style="color:inherit;text-decoration:none">${esc(p.name)}</a></h3>
+      ${p.description ? `<small style="color:var(--mut);line-height:1.35">${esc(p.description)}</small>` : ''}
+      <div>${(p.diet || []).map(d => `<span class="tag">${esc(d)}</span>`).join('')}</div>
+      ${st.mode === 'retail'
+        ? `<b>${K(p.price)}</b>`
+        : `<b>${K(p.ws_price)} / carton</b>
+           <small>${p.carton} units · ${K(unitWs)}/unit · MOQ ${p.moq}</small>
+           <div class="margin-pill">Est. resale profit: +${K(resaleProfit)}/ctn (${marginPct}% margin)</div>`}
+      <small class="stockline ${expired(p) ? 'bad' : p.stock <= 20 ? 'warn' : 'ok'}">${expired(p) ? 'Batch expired' : p.stock <= 0 ? 'Out of stock' : p.stock <= 20 ? 'Low stock (' + p.stock + ' left)' : 'In stock · fresh batch'}</small>
+      <button class="pri" ${out ? 'disabled' : ''} data-add-sku="${esc(p.sku)}">${st.mode === 'retail' ? 'Add to cart' : 'Add cartons'}</button>
+    </div></article>`;
+  }
+  return h + `</div><div class="note">Ingredient and allergen details are verified per batch — check individual product pages before ordering.</div>`;
+}
+
+function wsApply() {
+  if (!st.user) {
+    return `<div class="panel"><h2>Wholesale access</h2><p>Sign in or create an account, then apply for a business account to unlock carton pricing and resale margin tools.</p><button class="pri" onclick="go('account')">Sign in / Sign up</button></div>`;
+  }
+  const s = st.prof?.ws_status;
+  if (s === 'pending') {
+    return `<div class="panel"><h2>Application pending review</h2><p class="warn">We'll unlock wholesale prices once an admin approves you.</p><button onclick="refresh()">Check status</button></div>`;
+  }
+  if (s === 'suspended') {
+    return `<div class="panel"><h2>Account suspended</h2><p>Contact support.</p></div>`;
+  }
+  return `<div class="panel">
+    <h2>Apply for a wholesale account</h2>
+    ${s === 'rejected' ? '<p class="bad">Your last application was rejected. You may re-apply.</p>' : ''}
+    <label for="bn">Business name</label><input id="bn" required>
+    <label for="cp">Contact person</label><input id="cp" required>
+    <label for="be">Business email</label><input id="be" type="email" value="${esc(st.user.email)}">
+    <label for="bp">Phone</label><input id="bp" inputmode="tel" placeholder="07XX… or +254…">
+    <label for="kra">KRA PIN</label><input id="kra" placeholder="P051…">
+    <label for="tier">Requested tier</label><select id="tier"><option>Tier-1</option><option>VIP</option></select>
+    <p><button class="pri" onclick="applyWs()">Submit application</button></p>
+  </div>`;
+}
+
+async function applyWs() {
+  const name = $('#bn').value.trim();
+  const contact = $('#cp').value.trim();
+  const phone = $('#bp').value.trim();
+  if (name.length < 2 || contact.length < 2) return toast('Enter business name and contact person', true);
+  if (phone.replace(/\D/g, '').length < 9) return toast('Enter a valid phone number', true);
+  const { error } = await sb.rpc('sv_apply_wholesale', {
+    p_name: name,
+    p_contact: contact,
+    p_email: $('#be').value.trim(),
+    p_phone: phone,
+    p_kra: $('#kra').value.trim(),
+    p_tier: $('#tier').value
+  });
+  if (error) return toast(error.message, true);
+  toast('Application submitted');
+  await loadProf();
+  render();
+}
+
+async function refresh() { await loadProf(); render(); }
+
+function mixV() {
+  const m = st.mix;
+  const g = Object.values(m.items).reduce((a, b) => a + b, 0) * 100;
+  const pr = (g / 100) * st.S.mix100;
+  const chosen = Object.entries(m.items).map(([sku, scoops]) => {
+    const p = st.P.find(x => x.sku === sku);
+    return p ? `${esc(p.name)} (${scoops * 100}g)` : null;
+  }).filter(Boolean);
+
+  return `<h2>Pick &amp; Mix Studio</h2>
+    <div class="panel">
+      <div class="row sp">
+        <div class="row">${[500, 1000, 2000].map(s => `<button ${m.size === s ? 'class="pri"' : ''} onclick="st.mix.size=${s};if(${g}>${s})st.mix.items={};render()">${s >= 1000 ? s / 1000 + 'kg' : s + 'g'}</button>`).join('')}</div>
+        ${g ? `<button type="button" onclick="st.mix.items={};render()">Clear mix</button>` : ''}
+      </div>
+      <div class="bar" role="progressbar" aria-valuenow="${g}" aria-valuemin="0" aria-valuemax="${m.size}" style="margin:12px 0">
+        <i style="width:${Math.min(100, (g / m.size) * 100)}%"></i>
+      </div>
+      <p><b>${g}g</b> of ${m.size}g · ${m.size - g}g left · <b>${K(pr)}</b></p>
+      ${chosen.length ? `<p><small>Selected: ${chosen.join(' · ')}</small></p>` : ''}
+      <label for="mn">Name your mix</label>
+      <input id="mn" maxlength="40" value="${esc(m.name)}" placeholder="e.g. Friday Movie Night Mix" oninput="st.mix.name=this.value">
+    </div>
+    <div class="grid">
+      ${st.P.filter(p => !expired(p) && p.stock > 0).map(p => {
+        const n = m.items[p.sku] || 0;
+        return `<div class="card"><div class="b">
+          <b>${esc(p.name)}</b>
+          <small>${n * 100}g selected</small>
+          <div class="row">
+            <button aria-label="Remove 100g ${esc(p.name)}" ${n <= 0 ? 'disabled' : ''} onclick="mx('${esc(p.sku)}',-1)">−</button>
+            <button aria-label="Add 100g ${esc(p.name)}" onclick="mx('${esc(p.sku)}',1)" ${g >= m.size || n >= p.stock ? 'disabled' : ''}>+</button>
+          </div>
+        </div></div>`;
+      }).join('')}
+    </div>
+    <p class="row">
+      <button class="pri" ${g ? '' : 'disabled'} onclick="addMix()">Add mix to cart</button>
+      <button ${g ? '' : 'disabled'} onclick="saveRec()">Save recipe</button>
+    </p>
+    ${st.recipes.length ? '<h3>Saved recipes</h3>' + st.recipes.map((r, i) => `<div class="panel row sp"><span><b>${esc(r.name)}</b> · ${r.size}g</span><button onclick="st.mix={size:${r.size},name:st.recipes[${i}].name,items:{...st.recipes[${i}].items}};render()">Load</button></div>`).join('') : ''}`;
+}
+
+function mx(s, d) {
+  const m = st.mix;
+  const g = Object.values(m.items).reduce((a, b) => a + b, 0) * 100;
+  if (d > 0 && g >= m.size) return;
+  m.items[s] = Math.max(0, (m.items[s] || 0) + d);
+  if (!m.items[s]) delete m.items[s];
+  render();
+}
+
+async function saveRec() {
+  const r = { name: st.mix.name.trim() || 'My mix', size: st.mix.size, items: { ...st.mix.items } };
+  if (st.user) {
+    const { error } = await sb.from('sv_recipes').insert(r);
+    if (error) return toast(error.message, true);
+    await loadRec();
+    toast('Recipe saved to your account');
+  } else {
+    st.recipes.push(r);
+    localStorage.setItem('sv_rec', JSON.stringify(st.recipes));
+    toast('Recipe saved on this device');
+  }
+  render();
+}
+
+function addMix() {
+  const m = st.mix;
+  const g = Object.values(m.items).reduce((a, b) => a + b, 0) * 100;
+  if (!g) return;
+  for (const [sku, scoops] of Object.entries(m.items)) {
+    const p = st.P.find(x => x.sku === sku);
+    if (!p || expired(p) || p.stock < scoops) {
+      return toast(`${p ? p.name : sku} no longer has enough stock for this mix`, true);
+    }
+  }
+  st.cart.retail.push({ k: 'm', name: m.name.trim() || 'My mix', size: m.size, grams: g, items: { ...m.items }, price: (g / 100) * st.S.mix100 });
+  st.mix = { size: m.size, items: {}, name: '' };
+  st.mode = 'retail';
+  go('cart');
+}
+
+function applyPromoCode() {
+  const code = ($('#promoin')?.value || '').trim().toUpperCase();
+  if (!code) {
+    st.promo = '';
+    localStorage.removeItem('sv_promo');
+    render();
+    return;
+  }
+  if (!PROMOS[code]) return toast('Invalid promo code. Try spinning the Vault at the top!', true);
+  st.promo = code;
+  localStorage.setItem('sv_promo', code);
+  toast(`Applied ${code}: ${PROMOS[code].label}`);
+  render();
+}
+
+function cartV() {
+  const c = st.cart[st.mode];
+  const r = price(c, st.mode);
+  if (!c.length) return `<div class="panel"><h2>Your cart is empty</h2><p style="color:var(--mut)">Fill your vault with small-batch sweets or build a custom Pick &amp; Mix.</p><button class="pri" onclick="go('shop')">Browse sweets</button></div>`;
+
+  const shipProgress = st.mode === 'retail'
+    ? `<div class="panel">
+        <div class="row sp" style="margin-bottom:6px">
+          <small><b>${r.freeShipGap > 0 ? `Add ${K(r.freeShipGap)} more for FREE delivery` : '🎉 Free delivery unlocked!'}</b></small>
+          <small>${r.freeShipPct}%</small>
+        </div>
+        <div class="bar mint"><i style="width:${r.freeShipPct}%"></i></div>
+      </div>`
+    : '';
+
+  return `<h2>Cart (${st.mode})</h2>
+    ${shipProgress}` +
+    r.L.map((l, i) => `<div class="panel row sp">
+      <div>
+        <b>${esc(l.name)}</b><br>
+        <small>${esc(l.desc)}</small>
+        ${l.moqErr ? `<br><span class="bad">${esc(l.moqErr)}</span> <button type="button" style="min-height:30px;padding:0 10px;font-size:12px" onclick="setMoq(${i},${l.moq})">Set to ${l.moq}</button>` : ''}
+      </div>
+      <div class="row">
+        ${l.it.k === 'p' ? `<button aria-label="Decrease quantity" onclick="qty(${i},-1)">−</button><b>${l.it.qty}</b><button aria-label="Increase quantity" onclick="qty(${i},1)">+</button>` : ''}
+        <button onclick="rm(${i})">Remove</button>
+        <b>${K(l.total)}</b>
+      </div>
+    </div>`).join('') +
+    (r.nxt ? `<div class="note">${esc(r.nxt)}</div>` : r.pct ? `<div class="note ok">${r.pct}% discount applied</div>` : '') +
+    (st.mode === 'retail' ? `<div class="panel">
+      <label for="promoin">Promo code</label>
+      <div class="row">
+        <input id="promoin" value="${esc(st.promo)}" placeholder="e.g. SWEET10" style="flex:1 1 160px;text-transform:uppercase">
+        <button type="button" onclick="applyPromoCode()">${st.promo ? 'Update' : 'Apply'}</button>
+      </div>
+      ${r.activePromo ? `<small class="ok" style="display:block;margin-top:6px">Active perk: ${esc(r.activePromo.code)} (${esc(r.activePromo.label)})</small>` : ''}
+    </div>` : '') +
+    `<div class="panel">
+      <div class="row sp"><span>Subtotal</span><span>${K(r.sub)}</span></div>
+      ${r.sav ? `<div class="row sp ok"><span>Savings (${r.pct}%)</span><span>−${K(r.sav)}</span></div>` : ''}
+      <div class="row sp"><span>Delivery</span><span>${r.fee ? K(r.fee) : 'Free'}</span></div>
+      <div class="row sp" style="margin-top:8px;padding-top:8px;border-top:1px solid var(--bd)"><b>Total</b><b>${K(r.total)}</b></div>
+      <small>Final totals are recalculated and verified on the server at checkout.</small>
+      <p><button class="pri" onclick="go('checkout')" ${r.L.some(l => l.moqErr) ? 'disabled' : ''}>Proceed to checkout</button></p>
+    </div>`;
+}
+
+const ck = {};
+function ckV() {
+  const r = price(st.cart[st.mode], st.mode);
+  const pays = st.mode === 'wholesale'
+    ? [['proforma', 'Proforma invoice'], ['mpesa', 'M-Pesa (simulated)'], ['bank', 'Bank transfer']]
+    : [['mpesa', 'M-Pesa (simulated)'], ['card', 'Card (simulated)'], ['bank', 'Bank transfer']];
+  const defaultName = ck.name || st.user?.user_metadata?.full_name || '';
+  const defaultPhone = ck.phone || st.user?.user_metadata?.phone || '';
+  return `<h2>Checkout</h2>
+    <div class="panel">
+      <label for="cn">Full name</label><input id="cn" autocomplete="name" value="${esc(defaultName)}" required>
+      <label for="cph">Phone (07XX / 01XX / +254)</label><input id="cph" inputmode="tel" value="${esc(defaultPhone)}" required>
+      <label for="cd">Delivery method</label><select id="cd" onchange="ck.del=this.value"><option value="delivery">Delivery</option><option value="pickup" ${ck.del === 'pickup' ? 'selected' : ''}>Pickup</option></select>
+      <label for="ca">Delivery address</label><input id="ca" value="${esc(ck.addr || '')}" placeholder="Estate, street, building or pickup note">
+      <label for="cgift">Gift message / packaging note (optional)</label><input id="cgift" maxlength="140" value="${esc(ck.gift || '')}" placeholder="e.g. Happy Birthday! Include ribbon wrap">
+      <label for="cp2">Payment</label><select id="cp2">${pays.map(p => `<option value="${p[0]}">${p[1]}</option>`).join('')}</select>
+    </div>
+    <div class="panel row sp"><b>Estimated total</b><b>${K(r.total)}</b></div>
+    <div class="note">Payments are simulated. No real money moves and no real M-Pesa prompt is sent.</div>
+    <button class="pri" id="plc" onclick="place()">Place order</button>`;
+}
+
+async function place() {
+  if (st.busy) return;
+  const rl = checkRateLimit('place_order', 4, 60000);
+  if (rl) return toast(rl, true);
+
+  Object.assign(ck, {
+    name: $('#cn').value.trim(),
+    phone: $('#cph').value.trim(),
+    addr: $('#ca').value.trim(),
+    gift: $('#cgift')?.value.trim() || '',
+    del: $('#cd').value,
+    pay: $('#cp2').value
+  });
+  if (ck.name.length < 2) return toast('Enter your full name', true);
+  if (ck.phone.replace(/\D/g, '').length < 9) return toast('Enter a valid Kenyan phone number', true);
+  if (ck.del === 'delivery' && ck.addr.length < 3) return toast('Enter your delivery address', true);
+
+  const items = st.cart[st.mode].map(i => i.k === 'p' ? { k: 'p', sku: i.sku, qty: i.qty } : { k: 'm', name: i.name, size: i.size, items: i.items });
+  const fullAddr = ck.gift ? `${ck.addr || 'Pickup'} [Gift Note: ${ck.gift}]` : ck.addr;
+
+  st.busy = true;
+  const placeButton = $('#plc');
+  if (placeButton) { placeButton.disabled = true; placeButton.textContent = 'Placing order…'; }
+  try {
+    const { data, error } = await sb.rpc('sv_place_order', {
+      p_items: items,
+      p_mode: st.mode,
+      p_cust: { name: ck.name, phone: ck.phone, addr: fullAddr, del: ck.del, pay: ck.pay }
+    });
+    if (error) throw error;
+    if (!data || typeof data !== 'object' || !data.ref) throw new Error('The server returned an incomplete order confirmation. Please check My Vault or Track before trying again.');
+    st.last = { ...data, mode: st.mode };
+    st.cart[st.mode] = [];
+    await Promise.all([loadShop(), loadOrders()]);
+    go('done');
+  } catch (error) {
+    console.error('SweetVault order placement failed:', error);
+    toast(error?.message || 'Order could not be placed. Please try again.', true);
+    if (placeButton) { placeButton.disabled = false; placeButton.textContent = 'Place order'; }
+  } finally {
+    st.busy = false;
+  }
+}
+
+function qrSvg(t) {
+  if (!t || typeof qrcode !== 'function') return '';
+  try {
+    const q = qrcode(0, 'M');
+    q.addData(String(t));
+    q.make();
+    return q.createSvgTag({ scalable: true, margin: 0 });
+  } catch (error) {
+    console.error('SweetVault QR generation failed:', error);
+    return '';
+  }
+}
+
+function passCard(ref, tok, status, pay, total, redeemed) {
+  return `<div class="panel pass">
+    <h3>${esc(ref)}</h3>
+    <small>${esc(status)} · ${esc(pay)} · ${K(total)}</small>
+    ${tok ? `<div class="qr" role="img" aria-label="Order pass QR code for ${esc(ref)}">${qrSvg(tok)}</div>` : '<p class="warn">Pass QR is not available yet. Please refresh My Vault or contact support.</p>'}
+    <p><b class="${redeemed ? 'bad' : 'ok'}">${redeemed ? 'REDEEMED' : 'Show at pickup / delivery'}</b></p>
+    <small>Single-use cryptographic pass. Verified on the server.</small>
+  </div>`;
+}
+
+function done() {
+  const o = st.last;
+  if (!o) return '';
+  const shareUrl = `${window.location.origin}${window.location.pathname}?ref=${encodeURIComponent(o.ref)}`;
+  const waMsg = `SweetVault Order ${o.ref}\n${o.lines.map(l => l.name + ' x' + (l.qty || l.cartons || '')).join('\n')}\nTotal: ${K(o.total)}\nTry SweetVault: ${shareUrl}`;
+  return `<h2>Order confirmed</h2>
+    <p class="ok">Reference ${esc(o.ref)}</p>
+    ${o.pay_status === 'paid_simulated' ? '<p>Payment is <b>simulated</b>.</p>' : '<p class="warn">Payment pending.</p>'}
+    ${o.savings ? `<p class="ok">You saved ${K(o.savings)}</p>` : ''}
+    ${passCard(o.ref, o.token, o.status, o.pay_status, o.total, false)}
+    <p class="row">
+      <a href="https://wa.me/?text=${encodeURIComponent(waMsg)}" target="_blank" rel="noopener noreferrer"><button class="pri">Share on WhatsApp</button></a>
+      <button onclick="go('shop')">Keep shopping</button>
+    </p>
+    ${st.user ? '' : '<div class="note">Guest order: save your pass now. Sign up to keep order history.</div>'}`;
+}
+
+function vault() {
+  if (!st.user) {
+    return `<div class="panel"><h2>My Vault</h2><p>Sign in to see your orders, passes, and personal referral link.</p><button class="pri" onclick="go('account')">Sign in</button></div>`;
+  }
+  const refTag = 'SV-' + st.user.id.slice(0, 6).toUpperCase();
+  const refLink = `${window.location.origin}${window.location.pathname}?ref=${refTag}`;
+  return `<h2>My Vault</h2>
+    <div class="panel">
+      <b>Share the sweetness</b>
+      <p style="font-size:13px;color:var(--mut);margin:4px 0 10px">Invite friends with your personal link so they get <b>SWEET10</b> (10% off their first treat box).</p>
+      <div class="row">
+        <input readonly value="${esc(refLink)}" style="flex:1 1 200px;font-size:13px">
+        <button type="button" class="pri" onclick="navigator.clipboard?.writeText('${esc(refLink)}');toast('Referral link copied!')">Copy link</button>
+      </div>
+    </div>` +
+    (st.orders.length
+      ? st.orders.map(o => {
+          const p = o.sv_order_passes?.[0] || o.sv_order_passes;
+          return passCard(o.ref, p?.token || o.ref, o.status.replace(/_/g, ' '), o.pay_status.replace(/_/g, ' '), o.total, !!p?.redeemed_at) +
+            `<p class="row" style="justify-content:center"><button onclick="reorder('${esc(o.id)}')">Reorder</button><button onclick="printDoc('${esc(o.id)}','invoice')">Invoice</button></p>`;
+        }).join('')
+      : '<p>No orders yet.</p>');
+}
+
+function reorder(id) {
+  const o = st.orders.find(x => x.id === id);
+  if (!o) return;
+  const mode = o.type;
+  if (mode === 'wholesale' && !wsOK()) return toast('Wholesale account not approved', true);
+  let n = 0;
+  for (const l of o.lines || []) {
+    if (!l.sku || !st.P.find(p => p.sku === l.sku)) continue;
+    const q = l.qty || l.cartons;
+    const c = st.cart[mode];
+    const ex = c.find(i => i.k === 'p' && i.sku === l.sku);
+    ex ? ex.qty += q : c.push({ k: 'p', sku: l.sku, qty: q });
+    n++;
+  }
+  if (!n) return toast('Nothing to reorder (custom mixes are not reordered here)', true);
+  st.mode = mode;
+  go('cart');
+}
+
+async function openP(sku) {
+  st.sel = sku;
+  const { data } = await sb.from('sv_reviews').select('*').eq('sku', sku).eq('approved', true).order('created_at', { ascending: false });
+  st.rev = data || [];
+  go('prod');
+}
+
+function prodV() {
+  const p = st.P.find(x => x.sku === st.sel);
+  if (!p) return '<p>Product not found.</p>';
+  const avg = st.rev.length ? (st.rev.reduce((a, r) => a + r.rating, 0) / st.rev.length).toFixed(1) : null;
+  return `<button onclick="go('shop')">← Back to shop</button>
+    <div class="panel" style="margin-top:12px">
+      <div class="card" style="max-width:340px;margin-bottom:14px">${tile(p)}</div>
+      <h2>${esc(p.name)}</h2>
+      <small>${esc(p.sku)} · ${esc(p.cat)}</small>
+      <p>${esc(p.description || '')}</p>
+      <p><b>${st.mode === 'retail' ? K(p.price) : K(p.ws_price) + ' / carton (' + p.carton + ' units, MOQ ' + p.moq + ')'}</b></p>
+      <div>${(p.diet || []).map(d => `<span class="tag">${esc(d)}</span>`).join('')}</div>
+      <h3>Ingredients</h3><p>${esc(p.ingredients || 'Not provided')}</p>
+      <h3>Allergens</h3><p>${esc(p.allergens || 'Not provided')}</p>
+      <p class="${expired(p) ? 'bad' : 'ok'}">${expired(p) ? 'Batch expired' : p.stock + ' in stock · best before ' + esc(p.bb || 'N/A')}</p>
+      <button class="pri" ${expired(p) || p.stock <= 0 || lock() ? 'disabled' : ''} data-add-sku="${esc(p.sku)}">${st.mode === 'retail' ? 'Add to cart' : 'Add cartons'}</button>
+    </div>
+    <h3>Reviews${avg ? ' · ' + avg + '/5' : ''}</h3>
+    ${st.rev.map(r => `<div class="panel"><b aria-label="${r.rating} stars">${'★'.repeat(r.rating)}</b> ${esc(r.author)}<br>${esc(r.body)}</div>`).join('') || '<p>No reviews yet.</p>'}
+    ${st.user ? `<div class="panel"><label for="rr">Rating</label><select id="rr">${[5, 4, 3, 2, 1].map(n => `<option>${n}</option>`).join('')}</select><label for="rt">Your review</label><input id="rt" maxlength="500"><p><button onclick="sendRev('${esc(p.sku)}')">Submit for moderation</button></p></div>` : '<p><small>Sign in to leave a review.</small></p>'}`;
+}
+
+async function sendRev(sku) {
+  const rl = checkRateLimit('review', 3, 60000);
+  if (rl) return toast(rl, true);
+  const body = $('#rt').value.trim();
+  if (!body) return toast('Write something first', true);
+  const { error } = await sb.from('sv_reviews').insert({
+    sku,
+    rating: +$('#rr').value,
+    body,
+    author: (st.user.email || 'Customer').split('@')[0].slice(0, 60)
+  });
+  if (error) return toast(error.message, true);
+  $('#rt').value = '';
+  toast('Thanks! Your review awaits moderation.');
+}
+
+const INFO = {
+  terms: ['Terms of Service', 'Orders are subject to availability and confirmation. Prices are in KES. We may cancel an order for a stock or pricing error and will refund any payment made.'],
+  privacy: ['Privacy Policy (KDPA 2019)', 'In accordance with the Kenya Data Protection Act, 2019, we collect only the minimum personal data (name, phone, address, email) necessary to fulfil orders and run your account. You can export your personal data or request erasure anytime from your Account settings.'],
+  cookies: ['Cookie & Storage Policy', 'We use only essential browser storage (sign-in session, cart, and saved recipes). No third-party advertising trackers or behavioural cookies are used.'],
+  refunds: ['Refunds & Returns', 'Report damaged or incorrect items within 48 hours with photos. Food cannot be returned once opened unless faulty.'],
+  shipping: ['Shipping & Delivery', 'Delivery fees show at checkout and orders above the free-delivery threshold ship free. Pickup is available. Delivery times are estimates.'],
+  wholesale: ['Wholesale Terms', 'Wholesale pricing is for approved business accounts, sold in master cartons with minimum order quantities. Credit terms are never automatic and are set per account by the business.'],
+  payment: ['Payment Terms', 'Payments in this demo are simulated. Bank transfer and proforma orders are confirmed once payment is received and verified by the business.'],
+  support: ['Customer Support', 'Use Track order with your reference and phone, or contact the business on its official WhatsApp number.']
+};
+
+function info() {
+  const [t, b] = INFO[st.page] || INFO.terms;
+  return `<h2>${t}</h2>
+    <div class="note">DRAFT: must be reviewed and completed by the business and a qualified legal professional before launch. No registration, tax or compliance claims are made.</div>
+    <div class="panel"><p>${b}</p></div>`;
+}
+
+async function track() {
+  const rl = checkRateLimit('track', 6, 60000);
+  const m = $('#tres');
+  if (rl) { m.innerHTML = `<span class="bad">${esc(rl)}</span>`; return; }
+
+  const { data, error } = await sb.rpc('sv_track', { p_ref: $('#tr').value.trim(), p_phone: $('#tp').value.trim() });
+  if (error) return m.textContent = error.message;
+  if (!data || !data.found) return m.innerHTML = '<span class="bad">No match. Check the reference and phone number.</span>';
+  resetRateLimit('track');
+  m.innerHTML = `<b>${esc(data.ref)}</b> · ${esc(data.status.replace(/_/g, ' '))} · ${esc(data.pay_status.replace(/_/g, ' '))} · ${K(data.total)}<br>` +
+    (data.history || []).map(h => esc(new Date(h.at).toLocaleString() + ' — ' + h.status.replace(/_/g, ' '))).join('<br>');
+}
+
+const trackV = () => `<h2>Track your order</h2>
+  <div class="panel">
+    <label for="tr">Order reference</label><input id="tr" placeholder="SV-1003">
+    <label for="tp">Phone used at checkout</label><input id="tp" inputmode="tel">
+    <p><button class="pri" onclick="track()">Track</button></p>
+    <div id="tres" role="status"></div>
+  </div>`;
+
+function footer() {
+  return `<div>
+    <div class="row">${Object.keys(INFO).map(k => `<button onclick="st.page='${k}';go('info')" style="min-height:36px">${INFO[k][0]}</button>`).join('')}</div>
+    <label for="nle">Newsletter &amp; Fresh Batch Alerts</label>
+    <div class="row"><input id="nle" type="email" placeholder="you@example.com" style="flex:1 1 200px"><button onclick="nl()">Subscribe</button></div>
+    <label class="row" style="font-weight:400"><input id="nlc" type="checkbox" style="width:22px;min-height:22px"> I expressly consent to receive marketing emails (KDPA 2019 opt-in) and can unsubscribe anytime.</label>
+    <small>© SweetVault Confectionery · Protected by TLS, CSP &amp; Single-Use Cryptographic Passes · Demo orders are labelled DEMO</small>
+  </div>`;
+}
+
+async function nl() {
+  const rl = checkRateLimit('newsletter', 3, 60000);
+  if (rl) return toast(rl, true);
+  if (!$('#nlc').checked) return toast('Please tick the explicit consent box', true);
+  const email = $('#nle').value.trim().toLowerCase();
+  if (!/^\S+@\S+\.\S+$/.test(email)) return toast('Enter a valid email address', true);
+  const { error } = await sb.from('sv_newsletter').insert({ email, consent: true });
+  if (error) return toast(error.code === '23505' ? 'Already subscribed' : 'Enter a valid email', true);
+  toast('Subscribed');
+  $('#nle').value = '';
+}
+
+function printDoc(id, kind) {
+  const o = [...st.adm.orders, ...st.orders].find(x => x.id === id);
+  if (!o) return;
+  const w = window.open('', '_blank', 'noopener,noreferrer');
+  if (!w) return toast('Allow pop-ups to print', true);
+  const doc = w.document;
+  doc.title = `${kind} ${o.ref}`;
+  const style = doc.createElement('style');
+  style.textContent = 'body{font:14px system-ui,sans-serif;max-width:700px;margin:24px auto;color:#111}table{width:100%;border-collapse:collapse;margin:14px 0}th,td{border:1px solid #ccc;padding:8px;text-align:left}';
+  doc.head.appendChild(style);
+  const wrap = doc.createElement('div');
+  const titleText = `SweetVault Confectionery — ${kind === 'invoice' ? (o.pay_method === 'proforma' ? 'Proforma Invoice' : 'Invoice') : 'Packing Slip'}`;
+  const rowsHtml = (o.lines || []).map(l => `<tr><td>${esc(l.name)}</td><td>${esc(l.qty || l.cartons || (l.grams ? l.grams + 'g' : ''))}</td><td>${kind === 'invoice' ? K(l.total) : '☐'}</td></tr>`).join('');
+  wrap.innerHTML = `<h2>${esc(titleText)}</h2>
+    <p>Ref <b>${esc(o.ref)}</b> · ${new Date(o.created_at).toLocaleDateString()}<br>${esc(o.customer_name)} · ${esc(o.phone || '')}<br>${esc(o.address || 'Pickup')}</p>
+    <table><thead><tr><th>Item</th><th>Qty</th><th>${kind === 'invoice' ? 'Total' : 'Packed'}</th></tr></thead><tbody>${rowsHtml}</tbody></table>
+    ${kind === 'invoice' ? `<p>Subtotal ${K(o.subtotal)} · Savings −${K(o.savings)} · Delivery ${K(o.delivery_fee)}<br><b>Total ${K(o.total)}</b> (${esc(o.pay_status.replace(/_/g, ' '))})</p><p><small>Business registration, tax number and VAT details to be added by the business.${o.is_demo ? ' DEMO DATA.' : ''}</small></p>` : ''}`;
+  doc.body.appendChild(wrap);
+  doc.close();
+  w.focus();
+  w.print();
+}
+
+function csv() {
+  const f = c => {
+    c = String(c ?? '');
+    if (/^[=+\-@\t\r]/.test(c)) c = "'" + c;
+    return '"' + c.replace(/"/g, '""') + '"';
+  };
+  const rows = [['ref', 'type', 'customer', 'payment', 'status', 'total', 'created']]
+    .concat(st.adm.orders.map(o => [o.ref, o.type, o.customer_name, o.pay_status, o.status, o.total, o.created_at]));
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([rows.map(r => r.map(f).join(',')).join('\n')], { type: 'text/csv;charset=utf-8' }));
+  a.download = 'sweetvault-orders.csv';
+  a.click();
+}
+
+async function scan() {
+  if (!('BarcodeDetector' in window)) return toast('Camera scanning is not supported in this browser. Enter the code manually.', true);
+  let stream;
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+  } catch (_) {
+    return toast('Camera permission denied. Enter the code manually.', true);
+  }
+  const v = document.createElement('video');
+  v.srcObject = stream;
+  v.setAttribute('playsinline', '');
+  v.style.width = '100%';
+  v.style.borderRadius = '12px';
+  $('#cam').innerHTML = '';
+  $('#cam').append(v);
+  try { await v.play(); }
+  catch (_) { stream.getTracks().forEach(t => t.stop()); $('#cam').innerHTML = ''; return toast('Could not start the camera preview. Enter the code manually.', true); }
+  let d;
+  try { d = new BarcodeDetector({ formats: ['qr_code'] }); }
+  catch (_) { stream.getTracks().forEach(t => t.stop()); $('#cam').innerHTML = ''; return toast('QR scanning is unavailable. Enter the code manually.', true); }
+  let stopped = false;
+  const stop = () => {
+    if (stopped) return;
+    stopped = true;
+    stream.getTracks().forEach(t => t.stop());
+    const c = $('#cam');
+    if (c) c.innerHTML = '';
+  };
+  const tick = async () => {
+    if (!v.isConnected) return stop();
+    try {
+      const r = await d.detect(v);
+      if (r[0]) {
+        $('#rf').value = r[0].rawValue;
+        stop();
+        return redeem();
+      }
+    } catch (_) {}
+    requestAnimationFrame(tick);
+  };
+  tick();
+}
+
+async function addProd() {
+  const g = i => ($('#np-' + i)?.value || '').trim();
+  const n = i => parseInt(g(i), 10);
+  const imgUrl = g('image');
+  if (imgUrl && !isSafeHttpsUrl(imgUrl)) return toast('Image URL must use HTTPS', true);
+
+  const row = {
+    sku: g('sku').toUpperCase(),
+    name: g('name'),
+    cat: g('cat'),
+    price: n('price'),
+    carton: n('carton'),
+    moq: n('moq'),
+    ws_price: n('ws'),
+    stock: n('stock'),
+    batch: g('batch') || null,
+    bb: g('bb') || null,
+    diet: g('diet') ? g('diet').split(',').map(x => x.trim()).filter(Boolean) : [],
+    description: g('desc') || null,
+    image_url: imgUrl || null,
+    active: true
+  };
+  if (!row.sku || !row.name || !row.cat) return toast('SKU, name, and category are required', true);
+  if (!Number.isFinite(row.price) || row.price < 0 || !Number.isFinite(row.ws_price) || row.ws_price < 0 || !Number.isFinite(row.stock) || row.stock < 0) {
+    return toast('Check price, carton, and stock numbers', true);
+  }
+  let { error } = await sb.from('sv_products').insert(row);
+  let imageFieldMissing = false;
+  if (error && /image_url|column/i.test(error.message)) {
+    delete row.image_url;
+    const retry = await sb.from('sv_products').insert(row);
+    if (retry.error) return toast(retry.error.message, true);
+    imageFieldMissing = true;
+  } else if (error) {
+    return toast(error.message, true);
+  }
+  await loadShop();
+  toast(imageFieldMissing ? 'Product added. Run the image setup SQL to save pictures.' : 'New treat added: ' + row.sku);
+  render();
+}
+
+async function archive(sku) {
+  const ok = await askConfirm('Archive product?', `Hide ${sku} from the storefront? Existing order history will remain intact.`);
+  if (!ok) return;
+  const { error } = await sb.from('sv_products').update({ active: false }).eq('sku', sku);
+  if (error) return toast(error.message, true);
+  await loadShop();
+  toast('Archived ' + sku);
+  render();
+}
+
+async function modRev(id, ok) {
+  const { error } = await (ok ? sb.from('sv_reviews').update({ approved: true }).eq('id', id) : sb.from('sv_reviews').delete().eq('id', id));
+  if (error) return toast(error.message, true);
+  await loadAdm();
+  render();
+}
+
+/* KDPA 2019 Data Subject Rights Handlers */
+function exportPersonalData() {
+  const bundle = {
+    exported_at: new Date().toISOString(),
+    regulation: 'Kenya Data Protection Act, 2019 — Right of Access',
+    account: st.user ? {
+      id: st.user.id,
+      email: st.user.email,
+      created_at: st.user.created_at,
+      metadata: st.user.user_metadata
+    } : null,
+    profile: st.prof,
+    orders: st.orders,
+    saved_recipes: st.recipes
+  };
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(bundle, null, 2)], { type: 'application/json' }));
+  a.download = `sweetvault-personal-data-${day(0)}.json`;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  toast('Personal data exported as JSON');
+}
+
+async function purgeLocalData() {
+  const ok = await askConfirm('Clear device data?', 'Remove cached carts, saved local recipes, and promo codes from this browser?');
+  if (!ok) return;
+  localStorage.removeItem('sv_cart');
+  localStorage.removeItem('sv_rec');
+  localStorage.removeItem('sv_promo');
+  sessionStorage.removeItem('sv_ref');
+  st.cart = { retail: [], wholesale: [] };
+  st.promo = '';
+  if (!st.user) st.recipes = [];
+  toast('Local device storage cleared');
+  render();
+}
+
+async function requestErasure() {
+  if (!st.user) return toast('Sign in before submitting an erasure request.', true);
+  const ok = await askConfirm('Request account deletion?', 'Submit an account-erasure request for administrator review. This does not immediately delete your account or legally required transaction records.');
+  if (!ok) return;
+  try {
+    const { error } = await sb.from('sv_audit').insert({ action: 'gdpr_kdpa_erasure_request', detail: { user_id: st.user.id, email: st.user.email } });
+    if (error) throw error;
+    toast('Your erasure request has been recorded for administrator review. Your account remains active until the request is processed.');
+  } catch (error) {
+    console.error('SweetVault erasure request failed:', error);
+    toast('The request could not be recorded. Please contact SweetVault support.', true);
+  }
+}
+
+function account() {
+  if (st.authMode === 'recovery' && st.user) {
+    return `<div class="auth-wrap">
+      <div class="auth-intro"><span class="auth-eyebrow">SECURE YOUR ACCOUNT</span><h2>Choose a new password</h2><p>Use a unique password of at least 8 characters.</p></div>
+      <section class="panel auth-panel">
+        <form onsubmit="event.preventDefault();auth('recovery')" novalidate>
+          <label for="pw">New password</label>
+          <div class="auth-pw"><input id="pw" type="password" autocomplete="new-password" minlength="8" required placeholder="At least 8 characters"><button type="button" onclick="toggleAuthPassword()">Show</button></div>
+          <label for="pwc">Confirm new password</label><input id="pwc" type="password" autocomplete="new-password" minlength="8" required placeholder="Enter it again">
+          <div class="auth-actions"><button class="pri" type="submit" ${st.authBusy ? 'disabled' : ''}>${st.authBusy ? 'Updating…' : 'Save new password'}</button></div>
+        </form>
+      </section>
+    </div>`;
+  }
+  if (st.user) {
+    const meta = st.user.user_metadata || {};
+    const name = meta.full_name || meta.name || 'SweetVault customer';
+    const phone = meta.phone || '';
+    return `<div class="auth-wrap">
+      <div class="auth-intro"><span class="auth-eyebrow">YOUR SWEETVAULT</span><h2>Account &amp; Privacy</h2><p>Manage your details, orders, passes and privacy controls.</p></div>
+      <section class="panel auth-panel">
+        <div class="auth-name">${esc(name)}</div><p class="auth-email">${esc(st.user.email)}</p>
+        <p><small>Account type: <b>${esc(st.prof?.role || 'customer')}</b> · Wholesale: <b>${esc(st.prof?.ws_status || 'not applied')}</b></small></p>
+        <h3>Personal details</h3>
+        <label for="profileName">Full name</label><input id="profileName" autocomplete="name" maxlength="100" value="${esc(name)}">
+        <label for="profilePhone">Phone number</label><input id="profilePhone" type="tel" autocomplete="tel" maxlength="25" value="${esc(phone)}">
+        <p><button class="pri" type="button" onclick="saveProfile()" ${st.authBusy ? 'disabled' : ''}>Save details</button></p>
+        <h3>Change password</h3>
+        <label for="newAccountPassword">New password</label><input id="newAccountPassword" type="password" autocomplete="new-password" minlength="8" placeholder="At least 8 characters">
+        <label for="confirmAccountPassword">Confirm new password</label><input id="confirmAccountPassword" type="password" autocomplete="new-password" minlength="8" placeholder="Enter it again">
+        <p><button type="button" onclick="changeAccountPassword()" ${st.authBusy ? 'disabled' : ''}>Update password</button></p>
+        <div class="auth-actions"><button class="pri" onclick="go('pass')">My orders &amp; passes</button><button type="button" onclick="signOutUser()">Sign out</button></div>
+      </section>
+      <section class="panel"><h3>Data Protection &amp; Privacy (KDPA 2019)</h3>
+        <p style="font-size:13px;color:var(--mut)">Download a copy of your available account data, clear this browser's local shopping data, or submit an account-erasure request.</p>
+        <div class="row" style="margin-top:10px"><button type="button" onclick="exportPersonalData()">Export my data (JSON)</button><button type="button" onclick="purgeLocalData()">Clear device cache</button><button type="button" style="color:var(--berry)" onclick="requestErasure()">Request erasure</button></div>
+      </section>
+      ${isStaff() ? '' : `<div class="panel"><h3>Staff / admin access</h3><label for="ac">Admin code</label><input id="ac" type="password" autocomplete="off"><p><button type="button" onclick="claim()">Unlock</button></p></div>`}
+    </div>`;
+  }
+
+  const mode = st.authMode || 'in';
+  const up = mode === 'up';
+  const reset = mode === 'reset';
+  return `<div class="auth-wrap">
+    <div class="auth-intro"><span class="auth-eyebrow">${up ? 'JOIN THE SWEETVAULT FAMILY' : 'WELCOME BACK'}</span>
+      <h2>${up ? 'Create your account' : reset ? 'Reset your password' : 'Sign in'}</h2>
+      <p>${up ? 'Keep your order history and SweetVault passes together.' : 'Sign in to view your orders, passes and saved Pick &amp; Mix recipes.'}</p>
+    </div>
+    <section class="panel auth-panel">
+      <form onsubmit="event.preventDefault();auth('${up ? 'up' : reset ? 'reset' : 'in'}')" novalidate>
+        ${up ? `<div class="auth-fields"><div><label for="an">Full name</label><input id="an" autocomplete="name" maxlength="100" placeholder="Your full name" required></div><div><label for="aph">Phone number</label><input id="aph" type="tel" inputmode="tel" autocomplete="tel" maxlength="25" placeholder="07… or +254…" required></div></div>` : ''}
+        <div><label for="em">Email address</label><input id="em" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" required></div>
+        ${reset ? '' : `<div><label for="pw">Password</label><div class="auth-pw"><input id="pw" type="password" autocomplete="${up ? 'new-password' : 'current-password'}" minlength="8" placeholder="${up ? 'At least 8 characters' : 'Your password'}" oninput="passwordFeedback()" required><button type="button" onclick="toggleAuthPassword()">Show</button></div>${up ? `<div class="auth-meter"><span id="pwm"></span></div><small id="pwhint" class="auth-muted">Use 8+ characters. A longer passphrase is even better.</small>` : ''}</div>`}
+        ${up ? `<div><label for="pwc">Confirm password</label><input id="pwc" type="password" autocomplete="new-password" minlength="8" placeholder="Enter the same password again" required></div><label class="auth-consent"><input id="termsok" type="checkbox" required><span>I agree to the <a href="#" onclick="st.page='terms';go('info');return false">Terms of Service</a> and acknowledge the <a href="#" onclick="st.page='privacy';go('info');return false">Privacy Policy (KDPA 2019)</a>.</span></label>` : ''}
+        <div class="auth-actions"><button class="pri" type="submit" ${st.authBusy ? 'disabled' : ''}>${st.authBusy ? 'Please wait…' : up ? 'Create my account' : reset ? 'Send reset link' : 'Sign in'}</button>${!up && !reset ? `<button type="button" onclick="setAuthMode('reset')">Forgot password?</button>` : ''}</div>
+      </form>
+      <p class="auth-switch">${up ? 'Already have an account?' : reset ? 'Remembered your password?' : 'New to SweetVault?'} <button type="button" onclick="setAuthMode('${up ? 'in' : reset ? 'in' : 'up'}')">${up ? 'Sign in' : reset ? 'Back to sign in' : 'Create account'}</button></p>
+      <div class="auth-security">🔒 Authentication and password storage are handled by Supabase. Browser-side checks improve usability but do not replace server-side rate limits and database access policies.</div>
+    </section>
+  </div>`;
+}
+
+function setAuthMode(mode) {
+  if (!['in', 'up', 'reset', 'recovery'].includes(mode)) mode = 'in';
+  st.authMode = mode;
+  render();
+}
+
+function toggleAuthPassword() {
+  const p = $('#pw');
+  if (!p) return;
+  p.type = p.type === 'password' ? 'text' : 'password';
+  const b = p.parentElement.querySelector('button');
+  if (b) b.textContent = p.type === 'password' ? 'Show' : 'Hide';
+}
+
+function passwordFeedback() {
+  const p = $('#pw'), bar = $('#pwm'), hint = $('#pwhint');
+  if (!p || !bar || !hint) return;
+  const v = p.value;
+  let score = 0;
+  if (v.length >= 8) score++;
+  if (v.length >= 12) score++;
+  if (/[A-Z]/.test(v) && /[a-z]/.test(v)) score++;
+  if (/[0-9]/.test(v) || /[^A-Za-z0-9]/.test(v)) score++;
+  bar.style.width = (score * 25) + '%';
+  bar.style.background = score >= 4 ? 'var(--mint)' : score >= 2 ? 'var(--amber)' : 'var(--berry)';
+  hint.textContent = !v ? 'Use 8+ characters. A longer passphrase is even better.' : score < 2 ? 'Try a longer password.' : score < 4 ? 'Good start. Make it longer and less predictable.' : 'Strong length and variety. Avoid reusing this password.';
+}
+
+async function withAuthBusy(task) {
+  if (st.authBusy) return;
+  st.authBusy = true;
+  const submit = document.querySelector('.auth-panel form button[type="submit"]');
+  if (submit) { submit.disabled = true; submit.textContent = 'Please wait…'; }
+  try { await task(); }
+  catch (error) {
+    console.error('SweetVault account action failed:', error);
+    toast(error?.message || 'Something went wrong. Please try again.', true);
+  } finally {
+    st.authBusy = false;
+    if (st.view === 'account') render();
+  }
+}
+
+async function auth(k) {
+  const rl = checkRateLimit('auth_' + k, 5, 60000);
+  if (rl) return toast(rl, true);
+  return withAuthBusy(async () => {
+    const email = ($('#em')?.value || '').trim().toLowerCase();
+    if (!email || email.length > 254 || !/^\S+@\S+\.\S+$/.test(email)) return toast('Enter a valid email address', true);
+
+    if (k === 'reset') {
+      const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: window.location.origin + window.location.pathname });
+      if (error) throw error;
+      resetRateLimit('auth_reset');
+      st.authMode = 'in'; render();
+      return toast('If an account exists for this email, a password reset link has been sent.');
+    }
+
+    const password = $('#pw')?.value || '';
+    if (password.length < 8) return toast('Password must be at least 8 characters', true);
+
+    if (k === 'recovery') {
+      if (password !== ($('#pwc')?.value || '')) return toast('The passwords do not match', true);
+      const { error } = await sb.auth.updateUser({ password });
+      if (error) throw error;
+      resetRateLimit('auth_recovery');
+      st.authMode = 'in'; st.view = 'account';
+      toast('Your password has been updated successfully.');
+      return;
+    }
+
+    if (k === 'up') {
+      const name = ($('#an')?.value || '').trim();
+      const phone = ($('#aph')?.value || '').trim();
+      if (name.length < 2 || name.length > 100) return toast('Enter your full name (2–100 characters)', true);
+      if (phone.replace(/\D/g, '').length < 9) return toast('Enter a valid phone number', true);
+      if (password !== ($('#pwc')?.value || '')) return toast('The passwords do not match', true);
+      if (!$('#termsok')?.checked) return toast('Please accept the Terms and acknowledge the Privacy Policy', true);
+      const now = new Date().toISOString();
+      const { data, error } = await sb.auth.signUp({ email, password, options: { data: {
+        app: 'sweetvault', full_name: name, phone, referred_by: sessionStorage.getItem('sv_ref') || null,
+        terms_accepted_at: now, privacy_notice_acknowledged_at: now
+      } } });
+      if (error) throw error;
+      resetRateLimit('auth_up');
+      if (!data.session) {
+        st.authMode = 'in'; render();
+        return toast('Account created. Check your email for the confirmation link, then sign in.');
+      }
+      st.authMode = 'in'; st.view = 'shop';
+      toast('Welcome to SweetVault, ' + name.split(/\s+/)[0] + '!');
+      return;
+    }
+
+    const { error } = await sb.auth.signInWithPassword({ email, password });
+    if (error) throw error;
+    resetRateLimit('auth_in');
+    st.authMode = 'in'; st.view = 'shop';
+  });
+}
+
+async function saveProfile() {
+  if (!st.user || st.authBusy) return;
+  const name = ($('#profileName')?.value || '').trim();
+  const phone = ($('#profilePhone')?.value || '').trim();
+  if (name.length < 2 || name.length > 100) return toast('Enter your full name (2–100 characters)', true);
+  if (phone && phone.replace(/\D/g, '').length < 9) return toast('Enter a valid phone number', true);
+  return withAuthBusy(async () => {
+    const { error } = await sb.auth.updateUser({ data: { full_name: name, phone } });
+    if (error) throw error;
+    toast('Your account details have been saved.');
+  });
+}
+
+async function changeAccountPassword() {
+  if (!st.user || st.authBusy) return;
+  const password = $('#newAccountPassword')?.value || '';
+  const confirm = $('#confirmAccountPassword')?.value || '';
+  if (password.length < 8) return toast('Password must be at least 8 characters', true);
+  if (password !== confirm) return toast('The passwords do not match', true);
+  return withAuthBusy(async () => {
+    const { error } = await sb.auth.updateUser({ password });
+    if (error) throw error;
+    toast('Your password has been updated.');
+  });
+}
+
+async function signOutUser() {
+  try {
+    const { error } = await sb.auth.signOut();
+    if (error) throw error;
+    st.authMode = 'in'; st.view = 'shop';
+    toast('You have signed out.');
+  } catch (error) {
+    console.error('SweetVault sign-out failed:', error);
+    toast(error?.message || 'Could not sign out. Please try again.', true);
+  }
+}
+
+async function claim() {
+  const rl = checkRateLimit('admin_claim', 3, 120000);
+  if (rl) return toast(rl, true);
+  const { error } = await sb.rpc('sv_claim_admin', { p_code: $('#ac').value });
+  if (error) return toast('Invalid code', true);
+  resetRateLimit('admin_claim');
+  await loadProf();
+  toast('Access granted');
+  render();
+}
+
+const TR = { await_payment: 'confirmed', awaiting_payment: 'confirmed', confirmed: 'packing', packing: 'out_for_delivery', out_for_delivery: 'delivered' };
+async function adv(ref, to) {
+  const { error } = await sb.rpc('sv_set_status', { p_ref: ref, p_to: to });
+  if (error) return toast(error.message, true);
+  await loadAdm();
+  render();
+}
+
+async function redeem() {
+  const { data, error } = await sb.rpc('sv_redeem', { p_code: $('#rf').value.trim() });
+  const m = $('#rm');
+  if (error) { m.textContent = error.message; m.className = 'bad'; return; }
+  const mp = {
+    ok: 'Success: ' + data.ref + ' delivered',
+    used: 'Already used: ' + (data.ref || ''),
+    invalid: 'Invalid code',
+    ineligible: 'Not eligible (' + (data.status || '') + ')'
+  };
+  m.textContent = mp[data.result] || 'Unexpected response';
+  m.className = data.result === 'ok' ? 'ok' : 'bad';
+  if (data.result === 'ok') loadAdm().then(() => render());
+}
+
+async function review(id, s) {
+  const { error } = await sb.rpc('sv_review_application', { p_id: id, p_status: s });
+  if (error) return toast(error.message, true);
+  await loadAdm();
+  render();
+}
+
+const prodKey = sku => String(sku).replace(/[^a-zA-Z0-9_-]/g, '_');
+
+async function saveProduct(sku) {
+  const k = prodKey(sku);
+  const val = id => document.getElementById('ed-' + k + '-' + id)?.value?.trim() || '';
+  const num = id => Number(val(id));
+  const imgUrl = val('image');
+  if (imgUrl && !isSafeHttpsUrl(imgUrl)) return toast('Product image URL must use HTTPS', true);
+
+  const row = {
+    name: val('name'),
+    cat: val('cat'),
+    price: num('price'),
+    carton: num('carton'),
+    moq: num('moq'),
+    ws_price: num('ws'),
+    stock: num('stock'),
+    batch: val('batch') || null,
+    bb: val('bb') || null,
+    diet: val('diet') ? val('diet').split(',').map(x => x.trim()).filter(Boolean) : [],
+    description: val('desc') || null,
+    image_url: imgUrl || null
+  };
+  if (!row.name || !row.cat) return toast('Product name and category are required', true);
+  if (!Number.isFinite(row.price) || row.price < 0 || !Number.isFinite(row.stock) || row.stock < 0 || !Number.isFinite(row.ws_price) || row.ws_price < 0) {
+    return toast('Check price and stock values', true);
+  }
+  let { error } = await sb.from('sv_products').update(row).eq('sku', sku);
+  let imageFieldMissing = false;
+  if (error && /image_url|column/i.test(error.message)) {
+    delete row.image_url;
+    const retry = await sb.from('sv_products').update(row).eq('sku', sku);
+    error = retry.error;
+    imageFieldMissing = !error;
+  }
+  if (error) return toast(error.message, true);
+  await loadShop();
+  toast(imageFieldMissing ? 'Product details saved. Run the image setup SQL to save pictures.' : 'Product updated: ' + sku);
+  render();
+}
+
+async function uploadProductImage(sku, file) {
+  if (!file) return;
+  const allowed = ['image/jpeg', 'image/png', 'image/webp', 'image/avif'];
+  if (!allowed.includes(file.type)) return toast('Only JPEG, PNG, WebP, or AVIF images are allowed', true);
+  if (file.size > 5 * 1024 * 1024) return toast('Image must be 5 MB or smaller', true);
+  const ext = (file.name.split('.').pop() || 'jpg').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const path = 'products/' + encodeURIComponent(sku) + '-' + Date.now() + '.' + (ext || 'jpg');
+  toast('Uploading image…');
+  const { error } = await sb.storage.from('product-images').upload(path, file, { upsert: true, contentType: file.type });
+  if (error) return toast('Image upload failed: ' + error.message, true);
+  const { data } = sb.storage.from('product-images').getPublicUrl(path);
+  const k = prodKey(sku);
+  const field = document.getElementById('ed-' + k + '-image');
+  if (field) field.value = data.publicUrl;
+  const preview = document.getElementById('ed-' + k + '-preview');
+  if (preview) { preview.src = data.publicUrl; preview.style.visibility = 'visible'; }
+  toast('Image uploaded. Tap Save product to publish it.');
+}
+
+async function setPricing() {
+  const v = $('#tiercfg').value.split('/').map(Number);
+  if (v.length !== 4 || v.some(x => !Number.isFinite(x))) return toast('Format: t1/d1/t2/d2 (e.g. 10/15/50/30)', true);
+  if (v[0] < 1 || v[2] <= v[0] || v[1] < 0 || v[1] > 90 || v[3] < 0 || v[3] > 90) return toast('Use positive increasing unit thresholds and discounts between 0% and 90%.', true);
+  const val = { ...st.S, t1: v[0], d1: v[1], t2: v[2], d2: v[3] };
+  const { error } = await sb.from('sv_settings').update({ value: val }).eq('key', 'pricing');
+  if (error) return toast(error.message, true);
+  st.S = val;
+  toast('Pricing updated');
+  render();
+}
+
+function inventorySummary() {
+  return `<h3>Inventory</h3><div class="panel">${st.P.map(p => `<p><b>${esc(p.name)}</b> · SKU ${esc(p.sku)} · ${p.stock} in stock · Retail ${K(p.price)} · Wholesale carton ${K(p.ws_price)}</p>`).join('')}</div>`;
+}
+
+function productStudio() {
+  return `<h3>Add new treat</h3>
+    <div class="panel">
+      <div class="admin-product-fields">
+        <div><label for="np-sku">SKU</label><input id="np-sku" placeholder="SV-SOUR-05"></div>
+        <div><label for="np-name">Product name</label><input id="np-name" placeholder="Sour Watermelon Rings"></div>
+        <div><label for="np-cat">Category</label><input id="np-cat" placeholder="Sour"></div>
+        <div><label for="np-price">Retail price (KES)</label><input id="np-price" type="number" min="0" value="250"></div>
+        <div><label for="np-ws">Wholesale carton (KES)</label><input id="np-ws" type="number" min="0" value="4500"></div>
+        <div><label for="np-carton">Units per carton</label><input id="np-carton" type="number" min="1" value="24"></div>
+        <div><label for="np-moq">Minimum cartons (MOQ)</label><input id="np-moq" type="number" min="1" value="2"></div>
+        <div><label for="np-stock">Initial stock (units)</label><input id="np-stock" type="number" min="0" value="100"></div>
+        <div><label for="np-batch">Batch number</label><input id="np-batch" placeholder="B26-05"></div>
+        <div><label for="np-bb">Best before (YYYY-MM-DD)</label><input id="np-bb" type="date"></div>
+        <div class="wide"><label for="np-diet">Dietary tags (comma separated)</label><input id="np-diet" placeholder="Vegan, Halal"></div>
+        <div class="wide"><label for="np-desc">Description</label><textarea id="np-desc" rows="2"></textarea></div>
+        <div class="wide"><label for="np-image">HTTPS Image URL (optional)</label><input id="np-image" type="url" placeholder="https://..."></div>
+      </div>
+      <p><button class="pri" type="button" onclick="addProd()">Add treat to vault</button></p>
+    </div>
+    <h3>Product studio</h3>
+    <p class="note">Edit product details, prices and stock. Paste a public HTTPS image URL or upload a photo to the product-images bucket, then save.</p>
+    <div class="admin-products">${st.P.map(p => {
+      const k = prodKey(p.sku);
+      const field = (id, label, value, type = 'text', wide = false) => `<div class="${wide ? 'wide' : ''}">
+        <label for="ed-${k}-${id}">${label}</label>
+        ${id === 'desc' ? `<textarea id="ed-${k}-${id}" rows="2">${esc(value ?? '')}</textarea>` : `<input id="ed-${k}-${id}" type="${type}" value="${esc(value ?? '')}" ${type === 'number' ? 'min="0"' : ''}>`}
+      </div>`;
+      return `<article class="admin-product" data-sku="${esc(p.sku)}">
+        <div class="admin-product-head">
+          <img class="admin-product-preview" id="ed-${k}-preview" src="${isSafeHttpsUrl(p.image_url) ? esc(p.image_url) : ''}" alt="${esc(p.name)} preview" onerror="this.style.visibility='hidden'">
+          <div><h4 style="margin:0 0 5px">${esc(p.name)}</h4><small>SKU: ${esc(p.sku)} · ${esc(p.cat)}</small></div>
+        </div>
+        <div class="admin-product-fields">
+          ${field('name', 'Product name', p.name)}
+          ${field('cat', 'Category', p.cat)}
+          ${field('price', 'Retail price (KES)', p.price, 'number')}
+          ${field('ws', 'Wholesale carton price (KES)', p.ws_price, 'number')}
+          ${field('carton', 'Units per carton', p.carton, 'number')}
+          ${field('moq', 'Minimum cartons', p.moq, 'number')}
+          ${field('stock', 'Stock units', p.stock, 'number')}
+          ${field('batch', 'Batch number', p.batch)}
+          ${field('bb', 'Best before (YYYY-MM-DD)', p.bb)}
+          ${field('diet', 'Dietary tags (comma separated)', (p.diet || []).join(', '), 'text', true)}
+          ${field('desc', 'Description', p.description, 'text', true)}
+          ${field('image', 'Product image HTTPS URL', p.image_url, 'url', true)}
+        </div>
+        <div class="admin-photo-tools">
+          <label for="file-${k}">Upload product photo (JPEG/PNG/WebP/AVIF, max 5 MB)</label>
+          <input id="file-${k}" type="file" accept="image/jpeg,image/png,image/webp,image/avif" data-upload-sku="${esc(p.sku)}">
+        </div>
+        <div class="admin-product-actions">
+          <button class="pri" type="button" data-save-sku="${esc(p.sku)}">Save product</button>
+          <button type="button" data-archive-sku="${esc(p.sku)}">Archive</button>
+        </div>
+      </article>`;
+    }).join('') || '<div class="panel">No active products yet.</div>'}</div>`;
+}
+
+function adm() {
+  if (!isStaff()) return '';
+  const A = st.adm;
+  const all = A.orders;
+  const paid = all.filter(o => o.pay_status.startsWith('paid'));
+  const sum = a => a.reduce((s, o) => s + o.total, 0);
+  const O = all.filter(o => (!A.t || A.t === 'all' || o.type === A.t) && (!A.q || (o.ref + ' ' + o.customer_name).toLowerCase().includes(A.q.toLowerCase())));
+  const ad = isAdmin();
+  const stat = (a, b) => `<div class="panel stat">${a}<b>${b}</b></div>`;
+
+  return `<h2>Admin Command Center</h2>
+    <div class="row">
+      ${stat('Total sales', K(sum(paid)))}
+      ${stat('Retail', K(sum(paid.filter(o => o.type === 'retail'))))}
+      ${stat('Wholesale', K(sum(paid.filter(o => o.type === 'wholesale'))))}
+      ${stat('Avg order', K(all.length ? sum(all) / all.length : 0))}
+      ${stat('To fulfil', all.filter(o => ['confirmed', 'packing', 'out_for_delivery'].includes(o.status)).length)}
+      ${stat('Pending payment', all.filter(o => o.status === 'awaiting_payment').length)}
+      ${stat('Low stock', st.P.filter(p => p.stock < 20).length)}
+      ${stat('Expiring ≤30d', st.P.filter(p => soon(p) || expired(p)).length)}
+    </div>
+    <h3>Orders</h3>
+    <div class="panel row">
+      <div style="flex:2 1 160px"><label for="os">Search ref / customer</label><input id="os" value="${esc(A.q || '')}" oninput="st.adm.q=this.value;render(true)"></div>
+      <div style="flex:1 1 110px"><label for="ot">Type</label><select id="ot" onchange="st.adm.t=this.value;render()">${['all', 'retail', 'wholesale'].map(t => `<option ${A.t === t ? 'selected' : ''}>${t}</option>`).join('')}</select></div>
+      <button onclick="csv()" style="align-self:end">Export CSV</button>
+    </div>
+    <div class="tw panel">
+      <table>
+        <tr><th>Ref</th><th>Type</th><th>Customer</th><th>Payment</th><th>Status</th><th>Total</th><th></th></tr>
+        ${O.map(o => `<tr>
+          <td>${esc(o.ref)}${o.is_demo ? ' (DEMO)' : ''}</td>
+          <td>${esc(o.type)}</td>
+          <td>${esc(o.customer_name)}</td>
+          <td>${esc(o.pay_status.replace(/_/g, ' '))}</td>
+          <td>${esc(o.status.replace(/_/g, ' '))}</td>
+          <td>${K(o.total)}</td>
+          <td>
+            ${TR[o.status] ? `<button onclick="adv('${esc(o.ref)}','${TR[o.status]}')">→ ${TR[o.status].replace(/_/g, ' ')}</button>` : ''}
+            <button onclick="printDoc('${esc(o.id)}','invoice')">Invoice</button>
+            <button onclick="printDoc('${esc(o.id)}','slip')">Slip</button>
+          </td>
+        </tr>`).join('') || '<tr><td colspan="7">No orders</td></tr>'}
+      </table>
+    </div>
+    <h3>Verify pass</h3>
+    <div class="panel">
+      <label for="rf">Pass token or order reference</label>
+      <input id="rf" placeholder="SV-1003">
+      <p class="row">
+        <button class="pri" onclick="redeem()">Verify &amp; redeem</button>
+        <button onclick="scan()">Scan with camera</button>
+        <span id="rm" role="status"></span>
+      </p>
+      <div id="cam"></div>
+    </div>
+    ${ad ? productStudio() : inventorySummary()}
+    <h3>Wholesale applications</h3>
+    <div class="tw panel">
+      <table>
+        <tr><th>Business</th><th>Email</th><th>KRA</th><th>Tier</th><th>Status</th><th></th></tr>
+        ${A.apps.map(a => `<tr>
+          <td>${esc(a.business_name)}</td>
+          <td>${esc(a.email)}</td>
+          <td>${esc(a.kra_pin)}</td>
+          <td>${esc(a.tier)}</td>
+          <td>${esc(a.status)}</td>
+          <td>${a.status === 'pending'
+            ? `<button onclick="review('${esc(a.id)}','tier1')">Tier-1</button><button onclick="review('${esc(a.id)}','vip')">VIP</button><button onclick="review('${esc(a.id)}','rejected')">Reject</button>`
+            : (a.status === 'tier1' || a.status === 'vip')
+              ? `<button onclick="review('${esc(a.id)}','suspended')">Suspend</button>`
+              : ''}</td>
+        </tr>`).join('') || '<tr><td colspan="6">None</td></tr>'}
+      </table>
+    </div>
+    <h3>Review moderation</h3>
+    <div class="panel">
+      ${(A.revs || []).map(r => `<div class="row sp"><span>${esc(r.sku)} · ${'★'.repeat(r.rating)} ${esc(r.author)}: ${esc(r.body)}</span><span><button onclick="modRev('${esc(r.id)}',true)">Approve</button><button onclick="modRev('${esc(r.id)}',false)">Delete</button></span></div>`).join('') || 'No pending reviews.'}
+    </div>
+    <h3>Pricing tiers</h3>
+    <div class="panel">
+      <label for="tiercfg">Tier thresholds (units1 / %1 / units2 / %2)</label>
+      <input id="tiercfg" value="${st.S.t1}/${st.S.d1}/${st.S.t2}/${st.S.d2}">
+      <p><button onclick="setPricing()">Save</button></p>
+    </div>
+    <h3>Audit log</h3>
+    <div class="panel">
+      ${A.audit.map(a => esc(new Date(a.at).toLocaleString() + ' — ' + a.action + ' ' + JSON.stringify(a.detail))).join('<br>') || 'No entries.'}
+    </div>`;
+}
+
+function render(keep) {
+  try { localStorage.setItem('sv_cart', JSON.stringify(st.cart)); }
+  catch (error) { console.warn('SweetVault could not persist the cart on this device:', error); }
+  document.body.className = st.mode === 'wholesale' ? 'ws' : '';
+  $('#mode').textContent = st.mode === 'retail' ? 'Wholesale' : 'Retail';
+
+  const cart = st.cart[st.mode];
+  const totalQty = cart.reduce((n, x) => n + (x.qty || 1), 0);
+  $('#cartb').textContent = `Cart (${totalQty})`;
+
+  const tabs = [
+    ['shop', 'Shop'],
+    ['mix', 'Pick & Mix'],
+    ['cart', 'Cart'],
+    ['pass', 'My Vault'],
+    ['track', 'Track'],
+    ['account', st.user ? 'Account' : 'Sign in']
+  ];
+  if (isStaff()) tabs.push(['admin', 'Admin']);
+  $('#nav').innerHTML = tabs.map(a => `<button ${st.view === a[0] ? 'aria-current="true"' : ''} onclick="go('${a[0]}')">${a[1]}</button>`).join('');
+
+  const views = {
+    shop, mix: mixV, cart: cartV, checkout: ckV, done, admin: adm,
+    pass: vault, account, prod: prodV, info, track: trackV
+  };
+  const v = views[st.view] || shop;
+
+  const active = document.activeElement;
+  const activeId = active && active.id ? active.id : null;
+  const isTextInput = active && ['INPUT', 'TEXTAREA'].includes(active.tagName) && !['checkbox', 'radio', 'file'].includes(active.type);
+  const pos = isTextInput ? active.selectionStart : null;
+
+  $('#app').innerHTML = v();
+
+  const priced = price(cart, st.mode);
+  const qc = $('#quickcart');
+  const unitLabel = st.mode === 'wholesale'
+    ? `${totalQty} carton${totalQty === 1 ? '' : 's'}`
+    : `${totalQty} item${totalQty === 1 ? '' : 's'}${priced.freeShipGap > 0 ? ` · ${K(priced.freeShipGap)} to free delivery` : ' · Free delivery!'}`;
+  qc.innerHTML = (totalQty && ['shop', 'mix'].includes(st.view))
+    ? `<div class="quickcart-inner"><div><span class="qc-label">${unitLabel}</span><span class="qc-total">${K(priced.total)}</span></div><button onclick="go('cart')">View cart&nbsp; ↗</button></div>`
+    : '';
+
+  if (keep && activeId) {
+    const el = document.getElementById(activeId);
+    if (el) {
+      el.focus();
+      if (isTextInput && pos !== null) {
+        try { el.setSelectionRange(pos, pos); } catch (_) {}
+      }
+    }
+  }
+}
+
+document.addEventListener('click', e => {
+  if (e.target.closest('[data-clear-filter]')) {
+    st.q = '';
+    st.cat = 'All';
+    render();
+    return;
+  }
+  const add = e.target.closest('[data-add-sku]');
+  if (add) {
+    addP(add.dataset.addSku);
+    return;
+  }
+  const open = e.target.closest('[data-open-sku]');
+  if (open) {
+    e.preventDefault();
+    openP(open.dataset.openSku);
+    return;
+  }
+  const save = e.target.closest('[data-save-sku]');
+  if (save) {
+    saveProduct(save.dataset.saveSku);
+    return;
+  }
+  const arch = e.target.closest('[data-archive-sku]');
+  if (arch) {
+    archive(arch.dataset.archiveSku);
+  }
+});
+
+document.addEventListener('change', e => {
+  const up = e.target.closest('[data-upload-sku]');
+  if (up && up.files && up.files[0]) {
+    uploadProductImage(up.dataset.uploadSku, up.files[0]);
+  }
+});
+
+boot().catch(error => {
+  console.error('SweetVault startup failed:', error);
+  const app = document.querySelector('#app');
+  if (app) app.innerHTML = '<section class="panel"><h2>SweetVault could not start</h2><p>Please check your internet connection and reload. If the problem continues, contact support.</p></section>';
+  const live = document.querySelector('#live');
+  if (live) live.textContent = 'SweetVault could not start. Please reload the page.';
+});
+</script>
+</body>
+</html>
